@@ -51,10 +51,8 @@ function loadRoom(){
     frame.style.display = "none"
     body.append(frame)
     
-    
-    //body.onload = function(){
-        draw()
-    //}
+    draw()
+
 
     function draw() {
         for (var i = 0; i < document.images.length; i++) {

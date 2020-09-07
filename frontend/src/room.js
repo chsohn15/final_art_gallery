@@ -9,7 +9,7 @@
 function loadRoom(paintings){
 
     let roomTitle = document.createElement('h2')
-    roomTitle.innerText = "Epic Journeys"
+    roomTitle.innerText = paintings[0].rooms[0].name
     let roomTable = document.createElement('table')
     let roomTableRow = document.createElement('tr')
     let roomTableRow2 = document.createElement('tr')
@@ -21,22 +21,37 @@ function loadRoom(paintings){
         let roomTableImg = document.createElement('img')
         roomTableImg.width = "350"
         // roomTableImg.dataset.coordinates = "  "
+        // Create image
         roomTableImg.id = "source"
         roomTableImg.style.display = "none"
+        
+        //Create image text
         let imgP = document.createElement('span')
         imgP.innerText = painting.title
         imgP.dataset.id = painting.id 
 
+        // Show page or one painting on click
         imgP.addEventListener("click", function(){
             
             mainBody.innerHTML = ""
 
+            // Painting title
             let imgHeader = document.createElement('h2')
             imgHeader.innerText = painting.title
 
+            // Painting artist
             let imgArtist = document.createElement('h3')
             imgArtist.innerText = `By ${painting.artist}`
             
+            // Painting movement
+            let imgMovement = document.createElement('h4')
+            imgMovement.innerText = `Movement: ${painting.movement}`
+
+            // Painting date
+            let imgDate = document.createElement('h4')
+            imgDate.innerText = `Date: ${painting.date}`
+
+            // Zoom box
             zoomBox = document.createElement('div')
             zoomBox.className = "zoom-box"
 
@@ -54,8 +69,16 @@ function loadRoom(paintings){
             zoomImg.width = "400"
             zoomImg.height = "300"
             zoomBox.append(zoomImg)
-            mainBody.append(imgHeader, imgArtist, zoomBox)
+
             
+            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox)
+            
+            if (painting === paintings[0]){
+                let tourBtn = document.createElement('button')
+                tourBtn.innerText = "Visual Tour"
+                mainBody.append(tourBtn)
+            }
+
         })
         roomTableImg.src = painting.image_url
         roomTableData.append(roomTableImg, imgP)
@@ -66,6 +89,8 @@ function loadRoom(paintings){
         else{
             roomTableRow2.append(roomTableData)
         }
+
+
     })
     
     roomTable.append(roomTableRow, roomTableRow2)

@@ -43,7 +43,21 @@ cassatt = Painting.create(
     title: "The Boating Party",
     image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Mary_Cassatt_-_The_Boating_Party_-_Google_Art_Project.jpg/1280px-Mary_Cassatt_-_The_Boating_Party_-_Google_Art_Project.jpg")
 
-    
+cliff = Painting.create(
+    artist: "Claude Monet",
+    date: 1882,
+    movement: "Impressionism",
+    title: "Cliff Walk at Pourville",
+    image_url: "https://www.claude-monet.com/images/paintings/cliff-walk-at-pourville.jpg")
+
+age = Painting.create(
+    artist: "Thomas Cole",
+    date: 1842,
+    movement: "Romanticism",
+    title: "The Voyage of Life:Old Age",
+    image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg/1280px-Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg")
+
+
 waves = Painting.create(
     artist: "Arnold Böcklin",
     date: 1883,
@@ -83,5 +97,5 @@ kite = Painting.create(
     movement: "Abstract Postmodernism",
     title: "Sin Titulo",
     image_url: "https://ids.si.edu/ids/deliveryService?max_w=800&id=SAAM-2013.18_1")
-    room1.paintings << [voyage, bridge, cannes, cassatt]
-    room2.paintings << [waves,cat,rooster,funk]
+    room1.paintings << [voyage, bridge, cannes, cassatt, cliff, age]
+    room2.paintings << [waves,cat,rooster,funk, frida, kite]

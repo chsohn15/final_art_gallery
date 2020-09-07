@@ -80,7 +80,7 @@ frida = Painting.create(
 kite = Painting.create(
     artist: "Arturo Rodriguez",
     date: "1998",
-    movement: "",
+    movement: "Abstract Postmodernism",
     title: "Sin Titulo",
     image_url: "https://ids.si.edu/ids/deliveryService?max_w=800&id=SAAM-2013.18_1")
     room1.paintings << [voyage, bridge, cannes, cassatt]

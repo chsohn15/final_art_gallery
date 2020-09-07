@@ -70,8 +70,10 @@ function loadRoom(paintings){
             zoomImg.height = "300"
             zoomBox.append(zoomImg)
 
-            
-            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox)
+            saveBtn = document.createElement('button')
+            saveBtn.innerText = "*"
+
+            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)
             
             if (painting === paintings[0]){
                 let tourBtn = document.createElement('button')

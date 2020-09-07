@@ -9,7 +9,7 @@
 function loadRoom(paintings){
 
     let roomTitle = document.createElement('h2')
-    roomTitle.innerText = "Journeys"
+    roomTitle.innerText = "Epic Journeys"
     let roomTable = document.createElement('table')
     let roomTableRow = document.createElement('tr')
     let roomTableRow2 = document.createElement('tr')
@@ -30,6 +30,10 @@ function loadRoom(paintings){
             debugger
             mainBody.innerHTML = ""
 
+            let imgHeader = document.createElement('h2')
+            imgHeader.innerText = painting.title
+
+            mainBody.append(imgHeader)
             
         })
         roomTableImg.src = painting.image_url

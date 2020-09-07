@@ -1,0 +1,141 @@
+.magnifier-thumb-wrapper {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0
+}
+
+.magnifier-lens {
+    position: absolute;
+    border: solid 1px #ccc;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    overflow: hidden
+}
+
+.magnifier-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: solid 1px #ccc;
+    color: #fff;
+    text-align: center;
+    background: transparent;
+    background: rgba(50, 50, 50, 0.5);
+    z-index: 1000;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232)";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232)
+}
+
+.magnifier-loader-text {
+    font: 13px Arial;
+    margin-top: 10px
+}
+
+.magnifier-large {
+    position: absolute;
+    z-index: 100
+}
+
+.magnifier-preview {
+    padding: 0;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    overflow: hidden
+} 
+
+.magnifier-preview img {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.opaque {
+    opacity: .5;
+    filter: alpha(opacity=50);
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50)
+}
+
+.hidden {
+    display: none
+}
+
+
+.gallery {
+    width: 510px;
+    margin: 0 auto
+}
+
+.gallery .slider,
+.gallery a,
+.gallery .magnifier-preview {
+    height: 359px
+}
+
+.gallery ul,
+.gallery li,
+.gallery a,
+.gallery img {
+    margin: 0;
+    padding: 0;
+    border: 0
+}
+
+.gallery .slider {
+    float: left;
+    border: solid 1px #aaa;
+    width: 250px;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0
+}
+
+.gallery ul {
+    float: left;
+    width: 250px;
+    list-style: none
+}
+
+.gallery li {
+    float: left;
+    width: 100%;
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0
+}
+
+.gallery a {
+    display: block;
+    width: 250px
+}
+
+.gallery .magnifier-preview {
+    float: left;
+    width: 250px;
+    border: solid 1px #aaa;
+    border-left: 0;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.gallery .btn-wrapper {
+    clear: both;
+    overflow: hidden;
+    padding: 5px 0;
+    width: 250px;
+    text-align: center
+}
+
+.gallery .heading {
+    margin: 25px 0
+}
+
+.gallery .title {
+    font-weight: bold;
+    margin: 100px 0
+}

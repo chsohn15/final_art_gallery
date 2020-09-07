@@ -20,7 +20,7 @@ window.onscroll = () => {
 
     if (yOffset > 250 && yOffset < 766){
         // Calculate current scale value
-       //svgTag.style.transform = "scale(1.0)"
+       //svgTag.style.transform = "scale(2.0)"
         svgTag.style.transform = `scale(${getLinearValue(250, 766, 1.0, 2.0)})`
         svgTag.style.transformOrigin = "75% 75%"
         svgTag.style.transition = "transform .3s"

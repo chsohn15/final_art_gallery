@@ -1,10 +1,9 @@
-const journeyImages = [
+function loadRoom(){
+    const journeyImages = [
     "https://images.nga.gov/?service=asset&action=show_preview&asset=149503",
     "https://www.impressionists.org/images/paintings/bridge-at-argenteuil.jpg",
     "https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img/https://www.art-critique.com/wp-content/uploads/thumbs/16-524577-3a57h6fzrmunifi45r2dj4.jpg",
     "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Mary_Cassatt_-_The_Boating_Party_-_Google_Art_Project.jpg/1280px-Mary_Cassatt_-_The_Boating_Party_-_Google_Art_Project.jpg"]
-const body = document.querySelector('body')
-document.addEventListener("DOMContentLoaded",function(){
     
     let roomTable = document.createElement('table')
     let roomTableRow = document.createElement('tr')
@@ -69,4 +68,4 @@ document.addEventListener("DOMContentLoaded",function(){
             }
         }
 }
-})
+}

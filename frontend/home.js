@@ -1,11 +1,14 @@
-
+const body = document.querySelector('body')
 document.addEventListener("DOMContentLoaded",function(){
-    const body = document.querySelector('body')
-    let room1Image = document.createElement('image')
     
+    let room1Image = document.createElement('image')
+    const mainBody = document.querySelector('#main')
     const button1 = document.getElementById('journeys-room-btn')
 
     button1.addEventListener("click",function(){
-        document.write()
+        mainBody.innerHTML = ""
+
+        loadRoom()
     })
+
 })

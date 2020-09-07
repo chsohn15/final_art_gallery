@@ -21,7 +21,7 @@ function loadRoom(paintings){
         roomTableImg.width = "350"
         // roomTableImg.dataset.coordinates = "  "
         roomTableImg.id = "source"
-        roomTableImg.style.display = "none"
+        //roomTableImg.style.display = "none"
         let imgP = document.createElement('span')
         imgP.innerText = painting.title
         roomTableImg.src = painting.image_url
@@ -36,7 +36,7 @@ function loadRoom(paintings){
         //roomTableImg.width = "350"
         roomTableImg.setAttribute = ("style","object-fit: contain;")
         roomTableImg.id = "source"
-        roomTableImg.style.display = "none"
+        //roomTableImg.style.display = "none"
         let imgP = document.createElement('span')
         imgP.innerText = painting.title
         roomTableImg.src = painting.image_url

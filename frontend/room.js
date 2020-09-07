@@ -24,6 +24,14 @@ function loadRoom(paintings){
         roomTableImg.style.display = "none"
         let imgP = document.createElement('span')
         imgP.innerText = painting.title
+        imgP.dataset.id = painting.id 
+
+        imgP.addEventListener("click", function(){
+            debugger
+            mainBody.innerHTML = ""
+
+            
+        })
         roomTableImg.src = painting.image_url
         roomTableData.append(roomTableImg, imgP)
         roomTableRow.append(roomTableData)
@@ -39,18 +47,19 @@ function loadRoom(paintings){
         roomTableImg.style.display = "none"
         let imgP = document.createElement('span')
         imgP.innerText = painting.title
+        imgP.dataset.id = painting.id 
         roomTableImg.src = painting.image_url
         roomTableData.append(roomTableImg, imgP)
         roomTableRow2.append(roomTableData)
     })
     
     roomTable.append(roomTableRow, roomTableRow2)
-    body.append(roomTitle, roomTable)
+    mainBody.append(roomTitle, roomTable)
     let frame = document.createElement('img')
     frame.id = "frame"
     frame.src = "https://www.onlygfx.com/wp-content/uploads/2020/01/gold-picture-frame-1.png"
     frame.style.display = "none"
-    body.append(frame)
+    mainBody.append(frame)
     
     setTimeout(function(){draw()}, 1000);
     //draw()

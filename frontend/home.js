@@ -7,8 +7,11 @@ document.addEventListener("DOMContentLoaded",function(){
 
     button1.addEventListener("click",function(){
         mainBody.innerHTML = ""
-
-        loadRoom()
+        fetch("http://localhost:3000/paintings") 
+        .then(res => res.json())
+        .then(paintings => {
+            loadRoom(paintings)
+        })
     })
 
   

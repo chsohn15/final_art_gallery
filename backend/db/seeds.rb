@@ -71,6 +71,17 @@ rooster = Painting.create(
     movement: "Cubism",
     title: "Boy with rooster",
     image_url: "https://www.bertc.com/subfour/g126/images/goncharova.jpg")
-
+frida = Painting.create(
+    artist: "Frida Kahlo",
+    date: 1940,
+    movement: "Symbolism",
+    title: "Self-Portrait with Thorn Necklace and Hummingbird",
+    image_url: "https://www.fridakahlo.org/images/paintings/self-portrait-with-necklace-of-thorns.jpg")
+kite = Painting.create(
+    artist: "Arturo Rodriguez",
+    date: "1998",
+    movement: "",
+    title: "Sin Titulo",
+    image_url: "https://ids.si.edu/ids/deliveryService?max_w=800&id=SAAM-2013.18_1")
     room1.paintings << [voyage, bridge, cannes, cassatt]
     room2.paintings << [waves,cat,rooster,funk]

@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded",function(){
         fetch("http://localhost:3000/paintings") 
         .then(res => res.json())
         .then(paintings => {
-            loadRoom(paintings)
+            all_paintings = paintings.slice(0, 6)
+            console.log(all_paintings)
+            loadRoom(all_paintings)
         })
     })
 

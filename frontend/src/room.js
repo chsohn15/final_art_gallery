@@ -14,7 +14,8 @@ function loadRoom(paintings){
     let roomTableRow = document.createElement('tr')
     let roomTableRow2 = document.createElement('tr')
     //debugger
-    paintings.slice(0,2).forEach(painting => {
+
+    paintings.forEach(painting => {
         //debugger
         let roomTableData = document.createElement('td')
         let roomTableImg = document.createElement('img')
@@ -27,34 +28,44 @@ function loadRoom(paintings){
         imgP.dataset.id = painting.id 
 
         imgP.addEventListener("click", function(){
-            debugger
+            
             mainBody.innerHTML = ""
 
             let imgHeader = document.createElement('h2')
             imgHeader.innerText = painting.title
 
-            mainBody.append(imgHeader)
+            let imgArtist = document.createElement('h3')
+            imgArtist.innerText = `By ${painting.artist}`
+            
+            zoomBox = document.createElement('div')
+            zoomBox.className = "zoom-box"
+
+            $(function(){
+                $("img").jqZoom({
+                    selectorWidth: 30,
+                    selectorHeight: 30,
+                    viewerWidth: 400,
+                    viewerHeight: 300
+                });
+            })
+
+            let zoomImg = document.createElement('img')
+            zoomImg.src = painting.image_url 
+            zoomImg.width = "400"
+            zoomImg.height = "300"
+            zoomBox.append(zoomImg)
+            mainBody.append(imgHeader, imgArtist, zoomBox)
             
         })
         roomTableImg.src = painting.image_url
         roomTableData.append(roomTableImg, imgP)
-        roomTableRow.append(roomTableData)
-    })
 
-    paintings.slice(3,5).forEach(painting => {
-        //debugger
-        let roomTableData = document.createElement('td')
-        let roomTableImg = document.createElement('img')
-        //roomTableImg.width = "350"
-        roomTableImg.setAttribute = ("style","object-fit: contain;")
-        roomTableImg.id = "source"
-        roomTableImg.style.display = "none"
-        let imgP = document.createElement('span')
-        imgP.innerText = painting.title
-        imgP.dataset.id = painting.id 
-        roomTableImg.src = painting.image_url
-        roomTableData.append(roomTableImg, imgP)
-        roomTableRow2.append(roomTableData)
+        if (painting === paintings[0] || painting === paintings[1] || painting === paintings[2]){  
+            roomTableRow.append(roomTableData)
+        }
+        else{
+            roomTableRow2.append(roomTableData)
+        }
     })
     
     roomTable.append(roomTableRow, roomTableRow2)

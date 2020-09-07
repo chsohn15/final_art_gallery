@@ -4,7 +4,7 @@ function loadRoom(){
     "https://www.impressionists.org/images/paintings/bridge-at-argenteuil.jpg",
     "https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img/https://www.art-critique.com/wp-content/uploads/thumbs/16-524577-3a57h6fzrmunifi45r2dj4.jpg",
     "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Mary_Cassatt_-_The_Boating_Party_-_Google_Art_Project.jpg/1280px-Mary_Cassatt_-_The_Boating_Party_-_Google_Art_Project.jpg"]
-    
+    debugger
     let roomTable = document.createElement('table')
     let roomTableRow = document.createElement('tr')
     let roomTableRow2 = document.createElement('tr')
@@ -48,9 +48,9 @@ function loadRoom(){
     body.append(frame)
     
     
-    body.onload = function(){
+    //body.onload = function(){
         draw()
-    }
+    //}
 
     function draw() {
         for (var i = 0; i < document.images.length; i++) {

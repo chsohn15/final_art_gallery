@@ -1,18 +1,18 @@
+function loadScroll(){
 const notes = [
     "The Voyage of Life: Youth by Thomas Cole","Look at this marvelous painting", "Note 1", "Note 2"]
 let counter = 0;
-const main1= document.getElementById('main1')
+//const main1= document.getElementById('main1')
 const image = document.getElementById('voyage-youth')
 image.width = window.innerWidth
 const imgContainer = document.querySelector("figure.painting")
 const svgTag = document.querySelector('svg')
 
 
-document.addEventListener("DOMContentLoaded", function(){
-    if (counter < 4){
-        notes.forEach(note => loadNote(note))
-    }
-})
+
+if (counter < 4){
+    notes.forEach(note => loadNote(note))
+}
 
 window.onscroll = () => {
 
@@ -68,6 +68,7 @@ window.onscroll = () => {
 
 }
 let bottom1 = 500
+
 function loadNote(note){
 
     let capContainer = document.createElement('div')
@@ -85,6 +86,7 @@ function loadNote(note){
 
     figCaption.append(p)
     capContainer.append(figCaption)
-    main1.append(capContainer)
+    mainBody.append(capContainer)
     counter += 1
+}
 }

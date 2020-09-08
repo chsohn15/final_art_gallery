@@ -1,6 +1,7 @@
 function loadAudioRoom(paintings){
 
     let roomTitle = document.createElement('h2')
+    
     roomTitle.innerText = paintings[0].rooms[0].name
     let roomTable = document.createElement('table')
     let roomTableRow = document.createElement('tr')
@@ -67,6 +68,25 @@ function loadAudioRoom(paintings){
 
             saveBtn = document.createElement('button')
             saveBtn.innerText = "*"
+            saveBtn.addEventListener("click", ()=> { 
+                
+                fetch("http://localhost:3000/painting_rooms"
+                , {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    painting_id: painting.id,
+                    room_id: user.room.id
+                }
+                )
+            }
+            )
+            .then(res => res.json())
+            .then(res => {console.log(res)})
+            
+        })
 
             mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)
             
@@ -82,7 +102,7 @@ function loadAudioRoom(paintings){
                     mainBody.innerHTML = `<svg  version="1.1"  viewport="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image id="voyage-youth" href="${painting.image_url}" x="0" y="0" height= "90%" width="100%" ></svg>`
                     
                     // Load visual tour feature
-                    loadAudioScroll()
+                    loadScroll()
                 })
                 mainBody.append(tourBtn)
             }
@@ -139,12 +159,10 @@ function loadAudioRoom(paintings){
 let bottom1 = 500
 
 // Function to load visual tour
-function loadAudioScroll(){
+function loadScroll(){
     
     const notes = [
         "The Voyage of Life: Youth by Thomas Cole","Look at this marvelous painting", "Note 1", "Note 2"]
-   
-    //Connect to database in commented out code below
     // const notes = paintings[0].notes.map(note => {
     //     return note.content
     // })
@@ -219,7 +237,7 @@ function loadAudioScroll(){
     
     }
     
-    // Load a note onto painting
+    
     function loadNote(note){
     
         let capContainer = document.createElement('div')

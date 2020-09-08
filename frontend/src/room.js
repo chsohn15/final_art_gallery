@@ -1,5 +1,4 @@
 function loadRoom(paintings){
-
     let roomTitle = document.createElement('h2')
     
     roomTitle.innerText = paintings[0].rooms[0].name
@@ -78,13 +77,13 @@ function loadRoom(paintings){
                 },
                 body: JSON.stringify({
                     painting_id: painting.id,
-                    room_id: 24
+                    room_id: user.room.id
                 }
                 )
             }
             )
             .then(res => res.json())
-            .then(res => {debugger; console.log(res)})
+            .then(res => {console.log(res)})
             
         })
 

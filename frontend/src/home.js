@@ -4,8 +4,19 @@ const mainBody = document.querySelector('#main')
 const button1 = document.getElementById('journeys-room-btn')
 const userCollectionLink = document.getElementById('user-collection')
 
-document.addEventListener("DOMContentLoaded",function(){
+user = ""
+// Fetch first user and set as global variable
+fetch("http://localhost:3000/users/")
+.then(res => res.json())
+.then(users => {
+    user = users[0]
+})
+
+setTimeout(function(){console.log(user)}, 1000)
+setTimeout(function(){
+// document.addEventListener("DOMContentLoaded",function(){
     
+    //debugger
     homeTitle = document.createElement('div')
     homeTitle.id = "explore-title"
     homeTitle.innerText = "Explore Our Collections!"
@@ -41,6 +52,7 @@ document.addEventListener("DOMContentLoaded",function(){
         })
     })
 
+    // Click on My Collection in NavBar
     userCollectionLink.addEventListener("click",function(){
         mainBody.innerHTML = ""
 
@@ -48,7 +60,7 @@ document.addEventListener("DOMContentLoaded",function(){
         userRoomTitle.innerText = "My Art Collection"
         mainBody.append(userRoomTitle)
         // var user =
-        fetch("http://localhost:3000/users/2")
+        fetch(`http://localhost:3000/users/${user.id}`)
         .then(res => res.json())
         .then (user => {
             setTimeout(function(){loadUserRoom(user.room.paintings)}, 1000);
@@ -57,4 +69,6 @@ document.addEventListener("DOMContentLoaded",function(){
     
     })
     
-})
+}, 2000)
+
+

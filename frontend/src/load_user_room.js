@@ -45,7 +45,7 @@ function loadUserRoom(paintings){
             imgDate.innerText = `Date: ${painting.date}`
 
             // Zoom box
-            zoomBox = document.createElement('div')
+            let zoomBox = document.createElement('div')
             zoomBox.className = "zoom-box"
 
             //jQuery zoom feature
@@ -65,12 +65,32 @@ function loadUserRoom(paintings){
             zoomImg.height = "300"
             zoomBox.append(zoomImg)
 
-            saveBtn = document.createElement('button')
-            saveBtn.innerText = "*"
+            let removeBtn = document.createElement('button')
+            removeBtn.innerText = "Remove from My Collection"
 
-            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)
+            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, removeBtn)
             
-            
+            removeBtn.addEventListener("click",function(){
+                //painting.id
+                
+                let paintingID = painting.id
+                let roomID = user.room.id
+
+                let configObj = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":"application/json"
+                    }, 
+                    body: JSON.stringify({
+                        roomID, 
+                        paintingID
+                    })
+                }
+                // Destroy painting
+                fetch(`http://localhost:3000/deletepr`, configObj)
+                
+              
+            })
             
 
         })

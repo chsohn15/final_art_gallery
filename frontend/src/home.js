@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded",function(){
         .then(paintings => {
             all_paintings = paintings.slice(6, 12)
             console.log(all_paintings)
-            loadRoom(all_paintings)
+            loadAudioRoom(all_paintings)
         })
     })
   

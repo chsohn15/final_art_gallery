@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Painting.destroy_all
 Room.destroy_all
+Note.destroy_all
 
 room1 = Room.create(
     name: "Journeys"
@@ -21,6 +22,28 @@ voyage = Painting.create(
     movement: "Romanticism",
     title: "The Voyage of Life: Youth",
     image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg/800px-Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg")
+
+note1 = Note.create(
+    content: "Thomas Cole's 'The Voyage of Life' series illustrates on man's journey of life from childhood to old age. This particular painting elucidates the promise and hope of young adulthood.",
+    original?: true
+)
+
+note2 = Note.create(
+    content: "The painting depicts a heroic young adult who is looks forward with confidence and exuberance toward the future. The hero's physical separation from the angel shows increasing his increasing independence as he ventures toward his aspirations.",
+    original?: true
+)
+
+note3 = Note.create(
+    content: "The castle in the distance represents the youth's hopes and dreams for the future. The airy quality of the visage reflects the elusive and lofty nature of youthtful dreams.",
+    original?: true
+)
+
+note4 = Note.create(
+    content: "The verdurous landscape emphasizes the youth's growth and beauty during this point in his life. The calm waters undescore a peaceful transition from childhood to independence.",
+    original?: true
+)
+
+voyage.notes << [note1, note2, note3, note4]
 
 bridge = Painting.create(
     artist: "Claude Monet",

@@ -2,6 +2,8 @@ const body = document.querySelector('body')
 let room1Image = document.createElement('image')
 const mainBody = document.querySelector('#main')
 const button1 = document.getElementById('journeys-room-btn')
+const userCollectionLink = document.getElementById('user-collection')
+
 document.addEventListener("DOMContentLoaded",function(){
     
     homeTitle = document.createElement('div')
@@ -37,6 +39,14 @@ document.addEventListener("DOMContentLoaded",function(){
             console.log(all_paintings)
             loadAudioRoom(all_paintings)
         })
+    })
+
+    userCollectionLink.addEventListener("click",function(){
+        mainBody.innerHTML = ""
+
+        let userRoomTitle = document.createElement('h2')
+        userRoomTitle.innerText = "My Art Collection"
+        mainBody.append(userRoomTitle)
     })
   
 })

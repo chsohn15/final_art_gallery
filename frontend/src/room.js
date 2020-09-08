@@ -19,7 +19,7 @@ function loadRoom(paintings){
         //debugger
         let roomTableData = document.createElement('td')
         let roomTableImg = document.createElement('img')
-        roomTableImg.width = "350"
+        roomTableImg.width = "250"
         // roomTableImg.dataset.coordinates = "  "
         // Create image
         roomTableImg.id = "source"

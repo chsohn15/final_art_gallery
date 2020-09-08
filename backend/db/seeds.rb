@@ -10,16 +10,17 @@ Room.destroy_all
 Note.destroy_all
 User.destroy_all
 
+
+user1 = User.create(
+    name: "James Bo",
+    username: "jbo"
+)
+
 room1 = Room.create(
     name: "Journeys"
 )
 room2 = Room.create(
     name: "Mythical Beasts"
-)
-
-user1 = User.create(
-    name: "James Bo",
-    username: "jbo"
 )
 
 room3 = Room.create(
@@ -133,5 +134,8 @@ kite = Painting.create(
     movement: "Abstract Postmodernism",
     title: "Sin Titulo",
     image_url: "https://ids.si.edu/ids/deliveryService?max_w=800&id=SAAM-2013.18_1")
+    
     room1.paintings << [voyage, bridge, cannes, cassatt, cliff, age]
     room2.paintings << [waves,cat,rooster,funk, frida, kite]
+    room3.paintings << [cliff, cat]
+

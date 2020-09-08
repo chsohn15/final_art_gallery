@@ -82,7 +82,7 @@ function loadAudioRoom(paintings){
                     mainBody.innerHTML = `<svg  version="1.1"  viewport="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image id="voyage-youth" href="${painting.image_url}" x="0" y="0" height= "90%" width="100%" ></svg>`
                     
                     // Load visual tour feature
-                    loadScroll()
+                    loadAudioScroll()
                 })
                 mainBody.append(tourBtn)
             }
@@ -139,7 +139,7 @@ function loadAudioRoom(paintings){
 let bottom1 = 500
 
 // Function to load visual tour
-function loadScroll(){
+function loadAudioScroll(){
     
     const notes = [
         "The Voyage of Life: Youth by Thomas Cole","Look at this marvelous painting", "Note 1", "Note 2"]

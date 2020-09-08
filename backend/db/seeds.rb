@@ -24,7 +24,7 @@ voyage = Painting.create(
     image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg/800px-Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg")
 
 note1 = Note.create(
-    content: "Thomas Cole's 'The Voyage of Life' series illustrates on man's journey of life from childhood to old age. This particular painting elucidates the promise and hope of young adulthood.",
+    content: '"The Voyage of Life: Youth" by Thomas Cole',
     original?: true
 )
 

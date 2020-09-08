@@ -48,6 +48,7 @@ function loadUserRoom(paintings){
             let zoomBox = document.createElement('div')
             zoomBox.className = "zoom-box"
 
+
             //jQuery zoom feature
             $(function(){
                 $("img").jqZoom({
@@ -65,11 +66,79 @@ function loadUserRoom(paintings){
             zoomImg.height = "300"
             zoomBox.append(zoomImg)
 
+            // Create remove button
             let removeBtn = document.createElement('button')
             removeBtn.innerText = "Remove from My Collection"
 
-            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, removeBtn)
+            //Create a notes form 
+            let notesForm = document.createElement("form")
+            let notesInput = document.createElement("input")
+            let notesBtn = document.createElement("button")
+            notesBtn.innerText = "Submit Note"
+            notesInput.setAttribute("type", "text")
+            notesInput.setAttribute("placeholder","Add A Note Here")
+            notesForm.append(notesInput,notesBtn)
             
+
+            // creates notes ul and adds existing notes
+            let notesUl = document.createElement("ul")
+    
+            fetch(`http://localhost:3000/paintings/${painting.id}`)
+            .then(res => res.json())
+            .then(response => {  console.log(response.notes)
+            
+                response.notes.forEach(note => { 
+                    
+                    if(!note["original?"]){
+                    let notesLi = document.createElement("li")
+                    notesLi.innerText = note.content
+                    notesUl.append(notesLi)
+                    let deleteNoteBtn = document.createElement("button")
+                    deleteNoteBtn.innerText = "Delete This Note"
+                    deleteNoteBtn.dataset.id = note.id
+                    // deleteNoteBtn.value = note
+                    notesLi.append(deleteNoteBtn)
+                    
+                    deleteNoteBtn.addEventListener("click",function(e){
+                        let noteId =  e.target.dataset.id
+                        let configObj =  {   method: "DELETE" }
+                        fetch(`http://localhost:3000/notes/${noteId}`, configObj)
+                        .then(()=> notesLi.remove())
+                        })
+                    }
+                }
+            )  
+        })
+           
+
+            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, removeBtn, notesForm,notesUl)
+            // add a note 
+            notesForm.addEventListener("submit", function(e){
+                e.preventDefault()
+                let userNote = e.target[0].value
+                let configObj = {
+                    method: "POST",
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        painting_id: painting.id,
+                        user_id: user.id,
+                        content: userNote,
+                        "original?": false
+                    })
+                }
+                fetch("http://localhost:3000/notes", configObj)
+                .then(res => res.json())
+                .then(note  => {
+                    let notesLi = document.createElement("li")
+                    notesLi.innerText = note.content
+                    notesUl.append(notesLi)
+                })
+                
+                
+            })
+
             removeBtn.addEventListener("click",function(){
                 //painting.id
                 

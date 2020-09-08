@@ -12,7 +12,7 @@ fetch("http://localhost:3000/users/")
     user = users[0]
 })
 
-setTimeout(function(){console.log(user)}, 1000)
+
 setTimeout(function(){
 // document.addEventListener("DOMContentLoaded",function(){
     

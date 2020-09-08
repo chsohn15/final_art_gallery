@@ -1,7 +1,7 @@
-function loadRoom(paintings){
+function loadUserRoom(paintings){
+
     let roomTitle = document.createElement('h2')
-    
-    roomTitle.innerText = paintings[0].rooms[0].name
+  
     let roomTable = document.createElement('table')
     let roomTableRow = document.createElement('tr')
     let roomTableRow2 = document.createElement('tr')
@@ -45,7 +45,7 @@ function loadRoom(paintings){
             imgDate.innerText = `Date: ${painting.date}`
 
             // Zoom box
-            zoomBox = document.createElement('div')
+            let zoomBox = document.createElement('div')
             zoomBox.className = "zoom-box"
 
             //jQuery zoom feature
@@ -65,46 +65,33 @@ function loadRoom(paintings){
             zoomImg.height = "300"
             zoomBox.append(zoomImg)
 
-            saveBtn = document.createElement('button')
-            saveBtn.innerText = "*"
-            saveBtn.addEventListener("click", ()=> { 
+            let removeBtn = document.createElement('button')
+            removeBtn.innerText = "Remove from My Collection"
+
+            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, removeBtn)
+            
+            removeBtn.addEventListener("click",function(){
+                //painting.id
                 
-                fetch("http://localhost:3000/painting_rooms"
-                , {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    painting_id: painting.id,
-                    room_id: user.room.id
+                let paintingID = painting.id
+                let roomID = user.room.id
+
+                let configObj = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":"application/json"
+                    }, 
+                    body: JSON.stringify({
+                        roomID, 
+                        paintingID
+                    })
                 }
-                )
-            }
-            )
-            .then(res => res.json())
-            .then(res => {console.log(res)})
+                // Destroy painting
+                fetch(`http://localhost:3000/deletepr`, configObj)
+                
+              
+            })
             
-        })
-
-            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)
-            
-            // Append visual tour button for first painting in series
-            if (painting === paintings[0]){
-                let tourBtn = document.createElement('button')
-                tourBtn.innerText = "Visual Tour"
-
-                // Click on visual tour button to clear HTML and load visual tour
-                tourBtn.addEventListener("click", function(){
-                    console.log(painting.image_url)
-                    mainBody.innerHTML = ""
-                    mainBody.innerHTML = `<svg  version="1.1"  viewport="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image id="voyage-youth" href="${painting.image_url}" x="0" y="0" height= "90%" width="100%" ></svg>`
-                    
-                    // Load visual tour feature
-                    loadScroll()
-                })
-                mainBody.append(tourBtn)
-            }
 
         })
         roomTableImg.src = painting.image_url

@@ -78,7 +78,7 @@ function loadRoom(paintings){
                 },
                 body: JSON.stringify({
                     painting_id: painting.id,
-                    room_id: 11
+                    room_id: 24
                 }
                 )
             }

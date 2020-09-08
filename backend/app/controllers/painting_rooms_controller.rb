@@ -3,7 +3,9 @@ class PaintingRoomsController < ApplicationController
         paintingrooms = PaintingRoom.all
         render json: paintingrooms
     end
+
     def create
+        #byebug
         paintingroom = PaintingRoom.create(pr_params)
         render json: paintingroom
     end
@@ -11,7 +13,7 @@ class PaintingRoomsController < ApplicationController
 
     private 
     def pr_params
-        params.require(:painting_rooms).permit(:painting_id,:room_id)
+        params.require(:painting_room).permit(:painting_id,:room_id,:created_at,:updated_at)
     end
 
 end

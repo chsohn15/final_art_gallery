@@ -139,3 +139,5 @@ kite = Painting.create(
     room2.paintings << [waves,cat,rooster,funk, frida, kite]
     room3.paintings << [cliff, cat]
 
+   SMALL CHANGE
+

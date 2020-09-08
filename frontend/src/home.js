@@ -47,6 +47,12 @@ document.addEventListener("DOMContentLoaded",function(){
         let userRoomTitle = document.createElement('h2')
         userRoomTitle.innerText = "My Art Collection"
         mainBody.append(userRoomTitle)
+        // var user =
+        fetch("http://localhost:3000/users/2")
+        .then(res => res.json())
+        .then (user => {console.log(user.room.paintings)}
+        )
+    
     })
   
 })

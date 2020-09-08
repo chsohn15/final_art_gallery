@@ -8,6 +8,7 @@
 Painting.destroy_all
 Room.destroy_all
 Note.destroy_all
+User.destroy_all
 
 room1 = Room.create(
     name: "Journeys"
@@ -15,6 +16,18 @@ room1 = Room.create(
 room2 = Room.create(
     name: "Mythical Beasts"
 )
+
+user1 = User.create(
+    name: "James Bo",
+    username: "jbo"
+)
+
+room3 = Room.create(
+    name: "My Collection",
+    original?: false,
+    user: user1
+)
+
 
 voyage = Painting.create(
     artist: "Thomas Cole",

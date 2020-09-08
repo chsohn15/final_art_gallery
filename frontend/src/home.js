@@ -50,9 +50,11 @@ document.addEventListener("DOMContentLoaded",function(){
         // var user =
         fetch("http://localhost:3000/users/2")
         .then(res => res.json())
-        .then (user => {console.log(user.room.paintings)}
+        .then (user => {
+            setTimeout(function(){loadUserRoom(user.room.paintings)}, 1000);
+            }
         )
     
     })
-  
+    
 })

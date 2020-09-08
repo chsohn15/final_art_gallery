@@ -9,6 +9,7 @@ Painting.destroy_all
 Room.destroy_all
 Note.destroy_all
 User.destroy_all
+PaintingRoom.destroy_all
 
 
 user1 = User.create(

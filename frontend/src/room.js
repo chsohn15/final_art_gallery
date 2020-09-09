@@ -11,8 +11,7 @@ function loadRoom(paintings){
         
         let roomTableData = document.createElement('td')
         let roomTableImg = document.createElement('img')
-        roomTableImg.width = "250"
-        // roomTableImg.dataset.coordinates = "  "
+
 
         // Create image
         roomTableImg.id = "source"
@@ -138,18 +137,19 @@ function loadRoom(paintings){
     
     // Function to draw images and frames on canvas
     function draw() {
+
         for (var i = 0; i < document.images.length; i++) {
             if (document.images[i].getAttribute('id') != 'frame') {
                 canvas = document.createElement('canvas');
-                canvas.setAttribute('width', 500);
-                canvas.setAttribute('height', 400);
+                canvas.setAttribute('width', 400);
+                canvas.setAttribute('height', 300);
 
                 document.images[i].parentNode.insertBefore(canvas,document.images[i]);
 
                 ctx = canvas.getContext('2d');
 
-                ctx.drawImage(document.images[i], 55, 55);
-                ctx.drawImage(document.getElementById('frame'), 0, 0, 500, 400);
+                ctx.drawImage(document.images[i], 35, 37, 325, 225);
+                ctx.drawImage(document.getElementById('frame'), 0, 0, 400, 300);
             }
         }
 }

@@ -136,10 +136,10 @@ function loadHomePage (){
 
         mainBody.innerHTML = `
         <div class="card mb-3">
-            <img class="card-img-top" style="max-height:500px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg/1280px-Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg" alt="Card image cap">
+            <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg/1280px-Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg" alt="Card image cap">
                 <div class="card-body" style="text-align:center;">
                     <h5 class="card-title">Epic Journeys</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text">Embark on a journey through time with characters from around the world.</p>
                     <button id="room1-button" type="button" class="btn btn-outline-secondary">Enter Exhibit</button>
                 </div>
         </div>
@@ -175,41 +175,6 @@ function loadHomePage (){
                 loadAudioRoom(all_paintings)
             })
         })
-
-        let homeTitle = document.createElement('div')
-        homeTitle.id = "explore-title"
-        homeTitle.innerText = "Explore Our Collections!"
-
-        btn1 = document.createElement('button')
-        btn1.id = "journeys-room-btn"
-        btn1.innerText = "Room 1"
-
-        btn2 = document.createElement('button') 
-        btn2.id = "kristian-room-btn"
-        btn2.innerText = "Room 2"
-
-    mainBody.append(homeTitle, btn1, btn2)
-
-    btn1.addEventListener("click",function(){
-        mainBody.innerHTML = ""
-        fetch("http://localhost:3000/paintings") 
-        .then(res => res.json())
-        .then(paintings => {
-            all_paintings = paintings.slice(0, 6)
-            loadRoom(all_paintings)
-        })
-    })
-
-    btn2.addEventListener("click",function(){
-        mainBody.innerHTML = ""
-        fetch("http://localhost:3000/paintings") 
-        .then(res => res.json())
-        .then(paintings => {
-            all_paintings = paintings.slice(6, 12)
-            console.log(all_paintings)
-            loadAudioRoom(all_paintings)
-        })
-    })
 
     }   
     // Click on My Collection in NavBar

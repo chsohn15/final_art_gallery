@@ -18,7 +18,7 @@ user1 = User.create(
 )
 
 room1 = Room.create(
-    name: "Journeys"
+    name: "Epic Journeys"
 )
 room2 = Room.create(
     name: "Mythical Beasts"

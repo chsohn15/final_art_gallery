@@ -19,9 +19,16 @@
 }
 .card-img-top{
     object-fit:contain;
+    max-height:500px; 
+    padding-top:20px;
 }
 
-#home-nav, #site-title, #user-collection, #room-nav{
+.card{
+    max-width:800px; 
+    margin-left:300px;
+}
+
+#home-nav, #site-title, #user-collection, #room-nav, #carousel-caption-1, #carousel-caption-2, #carousel-caption-3{
     cursor:hand;
 }
 /* 

@@ -94,7 +94,7 @@ function loadRoom(paintings){
         })
 
         let backBtn = document.createElement('button')
-        backBtn.innerText = "Back to 'Journeys' Collection"
+        backBtn.innerText = "Back to 'Epic Journeys' Collection"
 
         let br = document.createElement('br')
         mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)

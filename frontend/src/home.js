@@ -64,9 +64,18 @@ setTimeout(function(){
         fetch(`http://localhost:3000/users/${user.id}`)
         .then(res => res.json())
         .then (user => {
-            setTimeout(function(){loadUserRoom(user.room.paintings)}, 1000);
+            if (user.room.paintings.length === 0){
+                let noPaintingsMsg = document.createElement('h4')
+                noPaintingsMsg.innerText = "You haven't saved any paintings to your collection yet!"
+                mainBody.append(noPaintingsMsg)
             }
-        )
+            else{
+            setTimeout(function(){
+                loadUserRoom(user.room.paintings)
+            }
+            , 1000);
+            }
+        })
     
     })
     

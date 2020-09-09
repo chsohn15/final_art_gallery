@@ -4,4 +4,9 @@
     /* font-family: 'Tangerine', cursive; */
     font-family: 'Allura', cursive;
     margin-left: 10px;
+    font-size: 30px;
+}
+
+.nav-item{
+    padding: 20px;
 }

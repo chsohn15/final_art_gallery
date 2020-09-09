@@ -4,6 +4,7 @@ const mainBody = document.querySelector('#main')
 const button1 = document.getElementById('journeys-room-btn')
 const userCollectionLink = document.getElementById('user-collection')
 const siteTitle = document.getElementById('site-title')
+const siteNavbar = document.getElementById('site-navbar')
 
 user = ""
 // Fetch first user and set as global variable
@@ -16,7 +17,12 @@ fetch("http://localhost:3000/users/")
 
 setTimeout(function(){
 // document.addEventListener("DOMContentLoaded",function(){
+    // siteNavbar.innerHTML += 
+    // ' <nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="#">K & C Art Gallery</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav"><li class="nav-item active"><a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a></li><li class="nav-item"><a class="nav-link" href="#">Features</a></li><li class="nav-item"><a class="nav-link" href="#">Pricing</a></li></ul></div></nav>'
 
+
+
+    
 
     //debugger
     homeTitle = document.createElement('div')

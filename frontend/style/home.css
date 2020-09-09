@@ -10,3 +10,8 @@
 .nav-item{
     padding: 30px;
 }
+
+.carousel-item > img{
+    width:640px;
+    height: 600px;
+}

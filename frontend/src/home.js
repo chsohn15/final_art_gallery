@@ -33,14 +33,14 @@ setTimeout(function(){
         </div>
       </div>
       <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg/800px-Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Second slide label</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
+        <img src="https://www.bertc.com/subfour/g126/images/goncharova.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Third slide label</h5>
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>

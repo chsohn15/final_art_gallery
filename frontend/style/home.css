@@ -13,5 +13,11 @@
 
 .carousel-item > img{
     width:640px;
-    height: 600px;
+    height: 800px;
+    object-fit: contain;
+
 }
+/* 
+.carousel-inner{
+    overflow:hidden;
+} */

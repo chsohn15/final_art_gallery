@@ -29,14 +29,14 @@ fetch("http://localhost:3000/users/")
       </div>
       <div class="carousel-item">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg/800px-Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
+        <div id="carousel-caption-2" class="carousel-caption d-none d-md-block">
           <h5>Visual Tours</h5>
           <p>Take a Visual Tour of Thomas Cole's <i>The Voyage of Life: Youth</i></p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="https://www.bertc.com/subfour/g126/images/goncharova.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
+        <div id="carousel-caption-3" class="carousel-caption d-none d-md-block">
           <h5>Mythical Beasts</h5>
           <p>Explore the K & C Art Gallery's <i>Mythical Beasts</i> exhibit.</p>
         </div>
@@ -56,9 +56,45 @@ fetch("http://localhost:3000/users/")
 
 function loadHomePage (){
 
+    // Direct carousel caption 1 to Room 1
     let carouselCaption1 = document.getElementById('carousel-caption-1')
+    carouselCaption1.addEventListener("click", function(){
+        mainBody.innerHTML = ""
+        fetch("http://localhost:3000/paintings") 
+        .then(res => res.json())
+        .then(paintings => {
+            all_paintings = paintings.slice(0, 6)
+            loadRoom(all_paintings)
+        })
+    })
 
-    
+    let carouselCaption2 = document.getElementById('carousel-caption-2')
+    carouselCaption2.addEventListener("click", function(){
+        //debugger
+       
+        
+        fetch("http://localhost:3000/paintings") 
+        .then(res => res.json())
+        .then(paintings => {
+            let painting = paintings[0]
+            mainBody.innerHTML = ""
+            mainBody.innerHTML = `<svg  version="1.1"  viewport="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image id="voyage-youth" href="${painting.image_url}" x="0" y="0" height= "90%" width="100%" ></svg>`
+            debugger
+            loadVisualScroll(painting)
+        })   
+    })
+
+    let carouselCaption3 = document.getElementById('carousel-caption-3')
+    carouselCaption3.addEventListener("click", function(){
+        mainBody.innerHTML = ""
+        fetch("http://localhost:3000/paintings") 
+        .then(res => res.json())
+        .then(paintings => {
+            all_paintings = paintings.slice(6, 12)
+            console.log(all_paintings)
+            loadAudioRoom(all_paintings)
+        })
+    })
 
     //debugger
     homeTitle = document.createElement('div')

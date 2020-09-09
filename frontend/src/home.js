@@ -16,18 +16,19 @@ fetch("http://localhost:3000/users/")
     loadHomePage()
     linkHomeButton()
     linkTitleButton()
+    linkMyCollection()
+  
 })
 
 // Add event listener to home button in navbar
 function linkHomeButton(){
         let homeLink = document.getElementById('home-nav')
-        //homeLink.setAttribute("style","cursor:hand;")
+        
         homeLink.addEventListener("click",function(){
-        mainBody.innerHTML = ""
-        loadNavBar()
-        loadHomePage()
-        linkHomeButton()
-        linkTitleButton()
+            mainBody.innerHTML = ""
+            loadNavBar()
+            loadHomePage()
+       
     })
 }
 
@@ -37,9 +38,36 @@ function linkTitleButton(){
         mainBody.innerHTML = ""
         loadNavBar()
         loadHomePage()
-        linkHomeButton()
-        linkTitleButton()
+       
 })}
+
+function linkMyCollection(){
+    userCollectionLink.addEventListener("click",function(){
+        mainBody.innerHTML = ""
+
+        let userRoomTitle = document.createElement('h2')
+        userRoomTitle.innerText = "My Art Collection"
+        mainBody.append(userRoomTitle)
+        // var user =
+        fetch(`http://localhost:3000/users/${user.id}`)
+        .then(res => res.json())
+        .then (user => {
+            if (user.room.paintings.length === 0){
+                let noPaintingsMsg = document.createElement('h4')
+                noPaintingsMsg.innerText = "You haven't saved any paintings to your collection yet!"
+                mainBody.append(noPaintingsMsg)
+            }
+            else{
+            setTimeout(function(){
+                mainBody.innerHTML = ""
+                loadUserRoom(user.room.paintings)
+            }
+            , 1000);
+            }
+        })
+    
+    })
+}
 
 
 function loadNavBar(){
@@ -82,6 +110,7 @@ function loadNavBar(){
       <span class="sr-only">Next</span>
     </a>
   </div>`
+  //linkMyCollection()
 }
 
 function loadHomePage (){
@@ -178,31 +207,7 @@ function loadHomePage (){
 
     }   
     // Click on My Collection in NavBar
-    userCollectionLink.addEventListener("click",function(){
-        mainBody.innerHTML = ""
-
-        let userRoomTitle = document.createElement('h2')
-        userRoomTitle.innerText = "My Art Collection"
-        mainBody.append(userRoomTitle)
-        // var user =
-        fetch(`http://localhost:3000/users/${user.id}`)
-        .then(res => res.json())
-        .then (user => {
-            if (user.room.paintings.length === 0){
-                let noPaintingsMsg = document.createElement('h4')
-                noPaintingsMsg.innerText = "You haven't saved any paintings to your collection yet!"
-                mainBody.append(noPaintingsMsg)
-            }
-            else{
-            setTimeout(function(){
-                mainBody.innerHTML = ""
-                loadUserRoom(user.room.paintings)
-            }
-            , 1000);
-            }
-        })
     
-    })
     
 }
 

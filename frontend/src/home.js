@@ -12,11 +12,6 @@ fetch("http://localhost:3000/users/")
 .then(res => res.json())
 .then(users => {
     user = users[0]
-})
-
-
-setTimeout(function(){
-
     mainBody.innerHTML = 
     `<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -27,23 +22,23 @@ setTimeout(function(){
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="https://www.claude-monet.com/images/paintings/cliff-walk-at-pourville.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <div id="carousel-caption-1" class="carousel-caption d-none d-md-block">
+          <h5>Epic Journeys</h5>
+          <p>Explore the K & C Art Gallery's newest exhibit.</p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg/800px-Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h5>Visual Tours</h5>
+          <p>Take a Visual Tour of Thomas Cole's <i>The Voyage of Life: Youth</i></p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="https://www.bertc.com/subfour/g126/images/goncharova.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h5>Mythical Beasts</h5>
+          <p>Explore the K & C Art Gallery's <i>Mythical Beasts</i> exhibit.</p>
         </div>
       </div>
     </div>
@@ -56,7 +51,12 @@ setTimeout(function(){
       <span class="sr-only">Next</span>
     </a>
   </div>`
+    loadHomePage()
+})
 
+function loadHomePage (){
+
+    let carouselCaption1 = document.getElementById('carousel-caption-1')
 
     
 
@@ -122,6 +122,9 @@ setTimeout(function(){
     
     })
     
-}, 1000)
+}
+
+
+
 
 

@@ -17,6 +17,9 @@
     object-fit: contain;
 
 }
+.card-img-top{
+    object-fit:contain;
+}
 /* 
 .carousel-inner{
     overflow:hidden;

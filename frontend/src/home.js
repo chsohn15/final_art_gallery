@@ -117,6 +117,27 @@ function loadHomePage (){
     // Function to load each room after clicking on exhibit
     function loadExhibits(){
         mainBody.innerHTML = ""
+
+        mainBody.innerHTML = `
+        <div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg/1280px-Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="https://www.fridakahlo.org/images/paintings/self-portrait-with-necklace-of-thorns.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  </div>
+       `
         homeTitle = document.createElement('div')
         homeTitle.id = "explore-title"
         homeTitle.innerText = "Explore Our Collections!"

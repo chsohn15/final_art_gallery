@@ -142,15 +142,15 @@ function loadAudioRoom(paintings){
         for (var i = 0; i < document.images.length; i++) {
             if (document.images[i].getAttribute('id') != 'frame') {
                 canvas = document.createElement('canvas');
-                canvas.setAttribute('width', 500);
-                canvas.setAttribute('height', 400);
+                canvas.setAttribute('width', 400);
+                canvas.setAttribute('height', 300);
 
                 document.images[i].parentNode.insertBefore(canvas,document.images[i]);
 
                 ctx = canvas.getContext('2d');
 
-                ctx.drawImage(document.images[i], 55, 55);
-                ctx.drawImage(document.getElementById('frame'), 0, 0, 500, 400);
+                ctx.drawImage(document.images[i], 35, 37,325,225);
+                ctx.drawImage(document.getElementById('frame'), 0, 0, 400, 300);
             }
         }
 }

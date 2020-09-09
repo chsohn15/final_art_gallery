@@ -110,8 +110,18 @@ function loadUserRoom(paintings){
             )  
         })
            
+        let backBtn = document.createElement('button')
+        backBtn.innerText = "Back to My Collection"
 
-            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, removeBtn, notesForm,notesUl)
+        
+
+            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, backBtn, removeBtn, notesForm,notesUl)
+            
+            backBtn.addEventListener("click", function(){
+                mainBody.innerHTML = ""
+                loadUserRoom(paintings)
+            })
+            
             // add a note 
             notesForm.addEventListener("submit", function(e){
                 e.preventDefault()

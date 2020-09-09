@@ -86,7 +86,11 @@ function loadRoom(paintings){
             
         })
 
-            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)
+        let backBtn = document.createElement('button')
+        backBtn.innerText = "Back to 'Journeys' Collection"
+
+        let br = document.createElement('br')
+        mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)
             
             // Append visual tour button for first painting in series
             if (painting === paintings[0]){
@@ -105,7 +109,15 @@ function loadRoom(paintings){
                 mainBody.append(tourBtn)
             }
 
+            mainBody.append(br, backBtn)
+
+            backBtn.addEventListener("click", function(){
+                mainBody.innerHTML = ""
+                loadRoom(paintings)
+            })
         })
+
+        
         roomTableImg.src = painting.image_url
         roomTableData.append(roomTableImg, imgP)
 

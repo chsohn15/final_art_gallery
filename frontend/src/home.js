@@ -15,7 +15,8 @@ fetch("http://localhost:3000/users/")
 
 setTimeout(function(){
 // document.addEventListener("DOMContentLoaded",function(){
-    
+
+
     //debugger
     homeTitle = document.createElement('div')
     homeTitle.id = "explore-title"

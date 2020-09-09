@@ -84,6 +84,13 @@ function loadRoom(paintings){
             .then(res => res.json())
             .then(res => {console.log(res)})
             
+            Swal.fire({
+                title: 'You saved this image to your collection!',
+                imageUrl: `${painting.image_url}`,
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
         })
 
         let backBtn = document.createElement('button')

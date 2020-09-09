@@ -12,6 +12,21 @@ fetch("http://localhost:3000/users/")
 .then(res => res.json())
 .then(users => {
     user = users[0]
+    loadNavBar()
+    loadHomePage()
+    linkHomeButton()
+})
+
+function linkHomeButton(){
+        let homeLink = document.getElementById('home-nav')
+        homeLink.addEventListener("click",function(){
+        mainBody.innerHTML = ""
+        loadNavBar()
+        loadHomePage()
+    })
+}
+
+function loadNavBar(){
     mainBody.innerHTML = 
     `<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -51,8 +66,7 @@ fetch("http://localhost:3000/users/")
       <span class="sr-only">Next</span>
     </a>
   </div>`
-    loadHomePage()
-})
+}
 
 function loadHomePage (){
 
@@ -68,11 +82,9 @@ function loadHomePage (){
         })
     })
 
+    //Direct carousel caption 2 to visual tour
     let carouselCaption2 = document.getElementById('carousel-caption-2')
     carouselCaption2.addEventListener("click", function(){
-        //debugger
-       
-        
         fetch("http://localhost:3000/paintings") 
         .then(res => res.json())
         .then(paintings => {
@@ -84,6 +96,7 @@ function loadHomePage (){
         })   
     })
 
+    // Direct caption 3 to Room 2
     let carouselCaption3 = document.getElementById('carousel-caption-3')
     carouselCaption3.addEventListener("click", function(){
         mainBody.innerHTML = ""
@@ -96,18 +109,25 @@ function loadHomePage (){
         })
     })
 
-    //debugger
-    homeTitle = document.createElement('div')
-    homeTitle.id = "explore-title"
-    homeTitle.innerText = "Explore Our Collections!"
+    // Add link to exhibits
+    let exhibitLink = document.getElementById('room-nav')
+    exhibitLink.addEventListener("click", function(){
+            loadExhibits()
+    })
+    // Function to load each room after clicking on exhibit
+    function loadExhibits(){
+        mainBody.innerHTML = ""
+        homeTitle = document.createElement('div')
+        homeTitle.id = "explore-title"
+        homeTitle.innerText = "Explore Our Collections!"
 
-    btn1 = document.createElement('button')
-    btn1.id = "journeys-room-btn"
-    btn1.innerText = "Room 1"
+        btn1 = document.createElement('button')
+        btn1.id = "journeys-room-btn"
+        btn1.innerText = "Room 1"
 
-    btn2 = document.createElement('button') 
-    btn2.id = "kristian-room-btn"
-    btn2.innerText = "Room 2"
+        btn2 = document.createElement('button') 
+        btn2.id = "kristian-room-btn"
+        btn2.innerText = "Room 2"
 
     mainBody.append(homeTitle, btn1, btn2)
 
@@ -132,6 +152,7 @@ function loadHomePage (){
         })
     })
 
+    }   
     // Click on My Collection in NavBar
     userCollectionLink.addEventListener("click",function(){
         mainBody.innerHTML = ""

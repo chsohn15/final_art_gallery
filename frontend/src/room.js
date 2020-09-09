@@ -111,6 +111,10 @@ function loadRoom(paintings){
 
             mainBody.append(br, backBtn)
 
+            backBtn.addEventListener("click", function(){
+                mainBody.innerHTML = ""
+                loadRoom(paintings)
+            })
         })
 
         

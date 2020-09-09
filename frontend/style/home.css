@@ -20,6 +20,10 @@
 .card-img-top{
     object-fit:contain;
 }
+
+#home-nav, #site-title, #user-collection, #room-nav{
+    cursor:hand;
+}
 /* 
 .carousel-inner{
     overflow:hidden;

@@ -21,6 +21,7 @@ fetch("http://localhost:3000/users/")
 // Add event listener to home button in navbar
 function linkHomeButton(){
         let homeLink = document.getElementById('home-nav')
+        //homeLink.setAttribute("style","cursor:hand;")
         homeLink.addEventListener("click",function(){
         mainBody.innerHTML = ""
         loadNavBar()
@@ -229,6 +230,7 @@ function loadHomePage (){
             }
             else{
             setTimeout(function(){
+                mainBody.innerHTML = ""
                 loadUserRoom(user.room.paintings)
             }
             , 1000);

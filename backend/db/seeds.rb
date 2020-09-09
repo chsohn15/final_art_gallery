@@ -110,12 +110,6 @@ cat = Painting.create(
     title: "Still life with cat and lobster",
     image_url: "https://i0.wp.com/uploads2.wikiart.org/images/pablo-picasso/still-life-with-cat-and-lobster-1962.jpg?ssl=1")
     
-funk = Painting.create(
-        artist: "Jim Nutt",
-        date: 1967,
-        movement: "Funk",
-        title: "Miss T. Garmint (she pants a lot)",
-        image_url: "https://static01.nyt.com/images/2011/03/13/arts/03132011_NUTTSlide-slide-T7O1/03132011_NUTTSlide-slide-T7O1-jumbo.jpg?quality=75&auto=webp&disable=upscale")
 
 rooster = Painting.create(
     artist: "Natalia Goncharova",
@@ -123,6 +117,12 @@ rooster = Painting.create(
     movement: "Cubism",
     title: "Boy with rooster",
     image_url: "https://www.bertc.com/subfour/g126/images/goncharova.jpg")
+funk = Painting.create(
+    artist: "Jim Nutt",
+    date: 1967,
+    movement: "Funk",
+    title: "Miss T. Garmint (she pants a lot)",
+    image_url: "https://static01.nyt.com/images/2011/03/13/arts/03132011_NUTTSlide-slide-T7O1/03132011_NUTTSlide-slide-T7O1-jumbo.jpg?quality=75&auto=webp&disable=upscale")
 frida = Painting.create(
     artist: "Frida Kahlo",
     date: 1940,

@@ -216,8 +216,6 @@ let bottom1 = 500
 // Function to load visual tour
 function loadScroll(){
     
-    // const notes = [
-    //     "The Voyage of Life: Youth by Thomas Cole","Look at this marvelous painting", "Note 1", "Note 2"]
     const notes = paintings[0].notes.map(note => {
         return note.content
     })

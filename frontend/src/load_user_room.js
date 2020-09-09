@@ -167,7 +167,28 @@ function loadUserRoom(paintings){
                 }
                 // Destroy painting
                 fetch(`http://localhost:3000/deletepr`, configObj)
+
+                Swal.fire({
+                    title: 'You have removed this painting from your collection!',
+                    imageUrl: `${painting.image_url}`,
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                  })
+                  mainBody.innerHTML = ""
+
+                  let userRoomTitle = document.createElement('h2')
+                  userRoomTitle.innerText = "My Art Collection"
+                  mainBody.append(userRoomTitle)
+                  // var user =
+                  fetch(`http://localhost:3000/users/${user.id}`)
+                  .then(res => res.json())
+                  .then (user => {
+                      setTimeout(function(){loadUserRoom(user.room.paintings)}, 1000);
+                      }
+                  )
                 
+
               
             })
             

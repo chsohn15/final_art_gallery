@@ -15,16 +15,31 @@ fetch("http://localhost:3000/users/")
     loadNavBar()
     loadHomePage()
     linkHomeButton()
+    linkTitleButton()
 })
 
+// Add event listener to home button in navbar
 function linkHomeButton(){
         let homeLink = document.getElementById('home-nav')
         homeLink.addEventListener("click",function(){
         mainBody.innerHTML = ""
         loadNavBar()
         loadHomePage()
+        linkHomeButton()
+        linkTitleButton()
     })
 }
+
+//Add event listener to site title in navbar 
+function linkTitleButton(){
+    siteTitle.addEventListener("click",function(){
+        mainBody.innerHTML = ""
+        loadNavBar()
+        loadHomePage()
+        linkHomeButton()
+        linkTitleButton()
+})}
+
 
 function loadNavBar(){
     mainBody.innerHTML = 
@@ -124,19 +139,43 @@ function loadHomePage (){
                 <div class="card-body" style="text-align:center;">
                     <h5 class="card-title">Epic Journeys</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <button id="room1-button" type="button" class="btn btn-outline-secondary">Enter Exhibit</button>
                 </div>
         </div>
         <div class="card mb-3">
             <img class="card-img-top" style="max-height:500px;" src="https://uploads3.wikiart.org/images/pablo-picasso/still-life-with-cat-and-lobster-1962.jpg!Large.jpg" alt="Card image cap">
                 <div class="card-body" style="text-align:center;">
                     <h5 class="card-title">Mythical Beasts</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <p class="card-text">Experience the fantastical imaginations of visionary painters as they blur the boundaries between human and beast.</p>
+                    <button id="room2-button" type="button" class="btn btn-outline-secondary">Enter Exhibit</button>
                 </div>
         </div>`
 
-        homeTitle = document.createElement('div')
+        
+        let room1Btn = document.getElementById('room1-button')
+        room1Btn.addEventListener("click",function(){
+            mainBody.innerHTML = ""
+            fetch("http://localhost:3000/paintings") 
+            .then(res => res.json())
+            .then(paintings => {
+                all_paintings = paintings.slice(0, 6)
+                loadRoom(all_paintings)
+            })
+        })
+
+        let room2Btn = document.getElementById('room2-button')
+        room2Btn.addEventListener("click",function(){
+            mainBody.innerHTML = ""
+            fetch("http://localhost:3000/paintings") 
+            .then(res => res.json())
+            .then(paintings => {
+                all_paintings = paintings.slice(6, 12)
+                console.log(all_paintings)
+                loadAudioRoom(all_paintings)
+            })
+        })
+
+        let homeTitle = document.createElement('div')
         homeTitle.id = "explore-title"
         homeTitle.innerText = "Explore Our Collections!"
 

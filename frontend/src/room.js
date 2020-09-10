@@ -46,14 +46,19 @@ function loadRoom(paintings){
         textDiv.addEventListener("click", function(){
             
             mainBody.innerHTML = ""
-            mainBody.setAttribute("style", "background-color:white;")
+            let paintingMainDiv = document.createElement('div')
+            paintingMainDiv.className = "painting-main-div"
 
+            let paintingTextDiv = document.createElement('div')
+            paintingTextDiv.className = "painting-text-div"
             // Painting title
             let imgHeader = document.createElement('h2')
+            imgHeader.className = "painting-header"
             imgHeader.innerText = painting.title
 
             // Painting artist
             let imgArtist = document.createElement('h3')
+            imgArtist.className = "painting-artist"
             imgArtist.innerText = `By ${painting.artist}`
             
             // Painting movement
@@ -64,6 +69,8 @@ function loadRoom(paintings){
             let imgDate = document.createElement('h4')
             imgDate.innerText = `Date: ${painting.date}`
 
+            paintingTextDiv.append(imgHeader, imgArtist, imgMovement, imgDate)
+            
             // Zoom box
             zoomBox = document.createElement('div')
             zoomBox.className = "zoom-box"
@@ -73,17 +80,19 @@ function loadRoom(paintings){
                 $("img").jqZoom({
                     selectorWidth: 30,
                     selectorHeight: 30,
-                    viewerWidth: 400,
-                    viewerHeight: 300
+                    viewerWidth: 600,
+                    viewerHeight: 500
                 });
             })
 
             // Create image for zooming
             let zoomImg = document.createElement('img')
             zoomImg.src = painting.image_url 
-            zoomImg.width = "400"
-            zoomImg.height = "300"
+            zoomImg.width = "500"
+            zoomImg.height = "400"
+
             zoomBox.append(zoomImg)
+            // zoomBox.append(zoomImg, imgHeader, imgArtist, imgMovement, imgDate)
 
             saveBtn = document.createElement('button')
             saveBtn.innerText = "*"
@@ -118,8 +127,8 @@ function loadRoom(paintings){
         backBtn.innerText = "Back to 'Epic Journeys' Collection"
 
         let br = document.createElement('br')
-        mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)
-        
+        paintingMainDiv.append(paintingTextDiv, zoomBox, saveBtn)
+        //paintingMainDiv.append(zoomBox, saveBtn)
             // Append visual tour button for first painting in series
             if (painting === paintings[0]){
                 let tourBtn = document.createElement('button')
@@ -134,15 +143,18 @@ function loadRoom(paintings){
                     // Load visual tour feature
                     loadVisualScroll(paintings[0])
                 })
-                mainBody.append(tourBtn)
+                paintingMainDiv.append(tourBtn)
             }
 
-            mainBody.append(br, backBtn)
+            paintingMainDiv.append(br, backBtn)
+            mainBody.append(paintingMainDiv)
 
             backBtn.addEventListener("click", function(){
                 mainBody.innerHTML = ""
                 loadRoom(paintings)
             })
+
+            
         })
 
         

@@ -168,7 +168,12 @@ function loadHomePage (){
     function loadExhibits(){
         mainBody.innerHTML = ""
 
-        mainBody.innerHTML = `
+        let mainExhibitDiv = document.createElement('div')
+        mainExhibitDiv.id = "main-exhibit-div"
+
+        mainBody.append(mainExhibitDiv)
+        
+        mainExhibitDiv.innerHTML = `
         <div class="card mb-3">
             <img class="card-img-top" style="max-height:420px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg/1280px-Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg" alt="Card image cap">
                 <div class="card-body" style="text-align:center;">

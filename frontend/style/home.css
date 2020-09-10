@@ -93,8 +93,8 @@
     width: 100%;
 }
 
-
-/* 
-.carousel-inner{
-    overflow:hidden;
-} */
+/* Exhibits page */
+#main-exhibit-div{
+    background-color: #a33241;
+background-image: url("https://www.transparenttextures.com/patterns/dust.png");
+}

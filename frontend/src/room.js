@@ -1,7 +1,7 @@
 function loadRoom(paintings){
     let mainDiv = document.createElement('div')
     mainDiv.className = "main-div"
-    mainDiv.setAttribute("style", "background-color: #780507;")
+    //mainDiv.setAttribute("style", "background-color: #780507;")
 
     let roomTitle = document.createElement('h2')
     

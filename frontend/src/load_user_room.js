@@ -163,6 +163,7 @@ function loadUserRoom(paintings){
                     let notesLi = document.createElement("li")
                     notesLi.innerText = note.content
                     notesUl.append(notesLi)
+                    notesForm.reset()
 
                     let deleteNoteBtn = document.createElement("button")
                     deleteNoteBtn.innerText = "Delete This Note"

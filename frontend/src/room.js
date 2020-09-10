@@ -5,8 +5,7 @@ function loadRoom(paintings){
     //mainDiv.setAttribute("style", "background-color: #780507;")
 
     let roomTitle = document.createElement('h2')
-    
-    roomTitle.innerText = paintings[0].rooms[0].name
+    roomTitle.innerText = "Epic Journeys"
     roomTitle.id = "room-1-title"
     let roomTable = document.createElement('table')
     let roomTableRow = document.createElement('tr')

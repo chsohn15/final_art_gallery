@@ -12,6 +12,11 @@
     color:#edd8d8;
 }
 
+.main-div{
+    width:100%;
+    height:100%;
+    margin:0;
+}
 .canvas-room-1{
     position:relative;
     padding-left: 40px;
@@ -19,7 +24,7 @@
     padding-bottom:10px;
 }
 
-#text-div{
+.text-div{
     position:relative;
     padding-left: 10px;
     text-align:center;

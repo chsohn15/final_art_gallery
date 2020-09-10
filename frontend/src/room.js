@@ -1,5 +1,7 @@
 function loadRoom(paintings){
-    //mainBody.setAttribute("style", "background-color: #780507;")
+    let mainDiv = document.createElement('div')
+    mainDiv.className = "main-div"
+    mainDiv.setAttribute("style", "background-color: #780507;")
 
     let roomTitle = document.createElement('h2')
     
@@ -25,7 +27,7 @@ function loadRoom(paintings){
         
         // Create div for text 
         let textDiv = document.createElement('div')
-        textDiv.id = "text-div"
+        textDiv.className = "text-div"
 
         //Create image text
         let imgP = document.createElement('p')
@@ -117,7 +119,7 @@ function loadRoom(paintings){
 
         let br = document.createElement('br')
         mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)
-            
+        
             // Append visual tour button for first painting in series
             if (painting === paintings[0]){
                 let tourBtn = document.createElement('button')
@@ -160,8 +162,8 @@ function loadRoom(paintings){
     
     // Append table to body
     roomTable.append(roomTableRow, roomTableRow2)
-    mainBody.append(roomTitle, roomTable)
-
+    mainDiv.append(roomTitle, roomTable)
+    mainBody.append(mainDiv)
     // Create a frame
     let frame = document.createElement('img')
     frame.id = "frame"

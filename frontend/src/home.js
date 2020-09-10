@@ -44,7 +44,7 @@ function linkTitleButton(){
 })}
 
 function linkMyCollection(){
-    mainBody.setAttribute("style", "background-color: white;")
+    //mainBody.setAttribute("style", "background-color: #780507;")
     userCollectionLink.addEventListener("click",function(){
         mainBody.innerHTML = ""
 

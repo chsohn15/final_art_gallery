@@ -39,6 +39,7 @@ let y = 0;
 
 const myPics = document.getElementById('myPics');
 const context = myCanvas.getContext('2d');
+const canvas = document.getElementById('myCanvas')
 
 
 function drawLine(context, x1, y1, x2, y2) {
@@ -94,10 +95,12 @@ window.addEventListener('mouseup', e => {
 let selector = document.getElementById('background-color-selector')
 selector.addEventListener("change", function(){
   const backgroundColor = document.querySelector('#background-color-selector').value
-  const canvas = document.getElementById('myCanvas')
   canvas.style.background = backgroundColor
 })
 
-img-save-btn.addEventListener("click", function(){
-  
-})
+let imgSaveBtn = document.querySelector('#img-save-btn')
+imgSaveBtn.addEventListener("click", function(ev){
+  imgSaveBtn.href = canvas.toDataURL();
+  imgSaveBtn.download = "mypainting.png";
+  console.log(dataURL);
+}, false)

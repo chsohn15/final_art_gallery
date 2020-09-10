@@ -2,9 +2,13 @@ function loadRoom(paintings){
     let roomTitle = document.createElement('h2')
     
     roomTitle.innerText = paintings[0].rooms[0].name
+    roomTitle.id = "room-1-title"
     let roomTable = document.createElement('table')
     let roomTableRow = document.createElement('tr')
+    roomTableRow.className = "room-1-row"
     let roomTableRow2 = document.createElement('tr')
+    roomTableRow2.className = "room-1-row"
+
 
     //Place each painting on the DOM in room
     paintings.forEach(painting => {
@@ -18,7 +22,7 @@ function loadRoom(paintings){
         roomTableImg.style.display = "none"
         
         //Create image text
-        let imgP = document.createElement('span')
+        let imgP = document.createElement('p')
         imgP.innerText = painting.title
         imgP.dataset.id = painting.id 
 

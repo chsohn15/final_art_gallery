@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Kaushan+Script&family=Tangerine:wght@700&display=swap');
+
+#room-1-title{
+    text-align:center;
+    /* padding-bottom: 10px; */
+    /* font-family: 'Cinzel', serif; */
+    font-family: 'Tangerine', cursive;
+    font-size:50px;
+}
+
+canvas{
+    position:relative;
+    padding-left: 40px;
+    padding-top: 30px;
+    padding-bottom:10px;
+}

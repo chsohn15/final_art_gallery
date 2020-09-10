@@ -71,6 +71,7 @@ function linkMyCollection(){
 
 
 function loadNavBar(){
+   
     mainBody.innerHTML = 
     `<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -111,6 +112,7 @@ function loadNavBar(){
     </a>
   </div>`
   //linkMyCollection()
+
 }
 
 function loadHomePage (){
@@ -165,7 +167,7 @@ function loadHomePage (){
 
         mainBody.innerHTML = `
         <div class="card mb-3">
-            <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg/1280px-Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg" alt="Card image cap">
+            <img class="card-img-top" style="max-height:420px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg/1280px-Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg" alt="Card image cap">
                 <div class="card-body" style="text-align:center;">
                     <h5 class="card-title">Epic Journeys</h5>
                     <p class="card-text">Embark on a journey through time with characters from around the world.</p>

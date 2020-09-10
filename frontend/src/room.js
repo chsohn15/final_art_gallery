@@ -17,6 +17,7 @@ function loadRoom(paintings){
     //Place each painting on the DOM in room
     paintings.forEach(painting => {
         
+
         let roomTableData = document.createElement('td')
         let roomTableImg = document.createElement('img')
 
@@ -128,7 +129,7 @@ function loadRoom(paintings){
 
         let br = document.createElement('br')
         paintingMainDiv.append(paintingTextDiv, zoomBox, saveBtn)
-        //paintingMainDiv.append(zoomBox, saveBtn)
+        
             // Append visual tour button for first painting in series
             if (painting === paintings[0]){
                 let tourBtn = document.createElement('button')

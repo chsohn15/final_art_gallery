@@ -2,6 +2,13 @@
     margin-left:100;
     display: inline-block;
     margin-top: 20;
+    
+}
+
+.painting-main-div{
+    background-color: #913459;
+    background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+height: 125%;
 }
 
 

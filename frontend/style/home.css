@@ -11,15 +11,53 @@
     padding: 30px;
 }
 
-.carousel-item > img{
-    width:640px;
-    height: 800px;
-    object-fit: contain;
+
+.carousel-item{
+    height:550px;
 
 }
+#carousel-image-1{
+    width:640px;
+    /* height: 600px; */
+    object-fit: contain;
+
+    transform: translateY(50%);
+    -webkit-transform: translateY(-20%);
+
+    position: relative;
+    
+
+}
+
+#carousel-image-2{
+    width:640px;
+    /* height: 600px; */
+    object-fit: contain;
+
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-40%);
+
+    position: relative;
+
+}
+
+#carousel-image-3{
+    width:640px;
+    /* height: 600px; */
+    object-fit: contain;
+
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-45%);
+
+    position: relative;
+
+}
+
+
+
 .card-img-top{
     object-fit:contain;
-    max-height:500px; 
+    max-height:300px; 
     padding-top:20px;
 }
 
@@ -31,6 +69,22 @@
 #home-nav, #site-title, #user-collection, #room-nav, #carousel-caption-1, #carousel-caption-2, #carousel-caption-3{
     cursor:hand;
 }
+
+.carousel-caption{
+    background: rgba(0, 0, 0, 0.3);
+
+    
+}
+
+#carousel-caption-1, #carousel-caption-2, #carousel-caption-3{
+    position:absolute;
+    top:415px;
+    left:0px;
+    height: 100px;
+    width: 100%;
+}
+
+
 /* 
 .carousel-inner{
     overflow:hidden;

@@ -80,21 +80,21 @@ function loadNavBar(){
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://www.claude-monet.com/images/paintings/cliff-walk-at-pourville.jpg" class="d-block w-100" alt="...">
+        <img id="carousel-image-1" src="https://www.claude-monet.com/images/paintings/cliff-walk-at-pourville.jpg" class="d-block w-100" alt="...">
         <div id="carousel-caption-1" class="carousel-caption d-none d-md-block">
           <h5>Epic Journeys</h5>
           <p>Explore the K & C Art Gallery's newest exhibit.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg/800px-Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg" class="d-block w-100" alt="...">
+        <img id="carousel-image-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg/800px-Thomas_Cole_-_The_Voyage_of_Life_Youth%2C_1842_%28National_Gallery_of_Art%29.jpg" class="d-block w-100" alt="...">
         <div id="carousel-caption-2" class="carousel-caption d-none d-md-block">
           <h5>Visual Tours</h5>
           <p>Take a Visual Tour of Thomas Cole's <i>The Voyage of Life: Youth</i></p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="https://www.bertc.com/subfour/g126/images/goncharova.jpg" class="d-block w-100" alt="...">
+        <img id="carousel-image-3" src="https://www.bertc.com/subfour/g126/images/goncharova.jpg" class="d-block w-100" alt="...">
         <div id="carousel-caption-3" class="carousel-caption d-none d-md-block">
           <h5>Mythical Beasts</h5>
           <p>Explore the K & C Art Gallery's <i>Mythical Beasts</i> exhibit.</p>

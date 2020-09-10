@@ -1,6 +1,5 @@
 function loadRoom(paintings){
     //mainBody.setAttribute("style", "background-color: #780507;")
-
     let roomTitle = document.createElement('h2')
     
     roomTitle.innerText = paintings[0].rooms[0].name
@@ -11,14 +10,13 @@ function loadRoom(paintings){
     let roomTableRow2 = document.createElement('tr')
     roomTableRow2.className = "room-1-row"
 
-
     //Place each painting on the DOM in room
     paintings.forEach(painting => {
         
         let roomTableData = document.createElement('td')
         let roomTableImg = document.createElement('img')
 
-
+        
         // Create image
         roomTableImg.id = "source"
         roomTableImg.style.display = "none"

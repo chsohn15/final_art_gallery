@@ -1,33 +1,48 @@
 function loadAudioRoom(paintings){
 
     let roomTitle = document.createElement('h2')
-    
+
     roomTitle.innerText = paintings[0].rooms[0].name
+    roomTitle.id = "room-2-title"
     let roomTable = document.createElement('table')
     let roomTableRow = document.createElement('tr')
+    roomTableRow.className = "room-2-row"
     let roomTableRow2 = document.createElement('tr')
+    roomTableRow2.className = "room-2-row"
 
     //Place each painting on the DOM in room
     paintings.forEach(painting => {
         
         let roomTableData = document.createElement('td')
         let roomTableImg = document.createElement('img')
-        roomTableImg.width = "250"
-        // roomTableImg.dataset.coordinates = "  "
+       
 
         // Create image
         roomTableImg.id = "source"
         roomTableImg.style.display = "none"
         
+        // Create div for text 
+        let textDiv = document.createElement('div')
+        textDiv.id = "room-2-text-div"
+
         //Create image text
         let imgP = document.createElement('span')
+        imgP.className = "room-2-image-p"
         imgP.innerText = painting.title
         imgP.dataset.id = painting.id 
 
+        //Create artist text
+        let imgP2 = document.createElement('p')
+        imgP2.className = "room-2-image-p2"
+        imgP2.innerText = painting.artist
+
+        textDiv.append(imgP, imgP2)
+
         // Link to show page of one painting on click
-        imgP.addEventListener("click", function(){
+        textDiv.addEventListener("click", function(){
             
             mainBody.innerHTML = ""
+            mainBody.setAttribute("style", "background-color:white;")
 
             // Painting title
             let imgHeader = document.createElement('h2')
@@ -83,11 +98,23 @@ function loadAudioRoom(paintings){
                 )
             }
             )
+            
             .then(res => res.json())
             .then(res => {console.log(res)})
-            
-        })
 
+            Swal.fire({
+                title: 'You saved this image to your collection!',
+                imageUrl: `${painting.image_url}`,
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+        })
+        
+        let backBtn = document.createElement('button')
+        backBtn.innerText = "Back to 'Mythical Creatures' Collection"
+
+        let br = document.createElement('br')
             mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)
             
             // Append visual tour button for first painting in series
@@ -106,10 +133,17 @@ function loadAudioRoom(paintings){
                 })
                 mainBody.append(tourBtn)
             }
+            mainBody.append(br, backBtn)
 
+            backBtn.addEventListener("click", function(){
+                mainBody.innerHTML = ""
+                loadAudioRoom(paintings)
+            })
         })
+
+        
         roomTableImg.src = painting.image_url
-        roomTableData.append(roomTableImg, imgP)
+        roomTableData.append(roomTableImg, textDiv)
 
         // Append three paintings per row
         if (painting === paintings[0] || painting === paintings[1] || painting === paintings[2]){  
@@ -142,6 +176,7 @@ function loadAudioRoom(paintings){
         for (var i = 0; i < document.images.length; i++) {
             if (document.images[i].getAttribute('id') != 'frame') {
                 canvas = document.createElement('canvas');
+                canvas.className ="canvas-room-2"
                 canvas.setAttribute('width', 400);
                 canvas.setAttribute('height', 300);
 
@@ -153,8 +188,8 @@ function loadAudioRoom(paintings){
                 ctx.drawImage(document.getElementById('frame'), 0, 0, 400, 300);
             }
         }
+    }
 }
-
 // Set distance of note from bottom of screen
 let bottom1 = 500
 
@@ -280,4 +315,4 @@ function loadScroll(){
         counter += 1
     }
     }
-}
+

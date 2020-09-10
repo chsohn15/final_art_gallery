@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+#room-2-title {
+    text-align:center;
+    padding-top: 20px;
+    /* padding-bottom: 10px; */
+    /* font-family: 'Cinzel', serif; */
+    font-family: 'Tangerine', cursive;
+    font-size:50px;
+    color:#edd8d8;
+}
+
+.canvas-room-2{
+    position:relative;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom:10px;
+}
+
+#room-2-text-div{
+    position:relative;
+    padding-left: 10px;
+    text-align:center;
+    font-family: 'Tangerine', cursive;
+    cursor:hand;
+    color:#edd8d8;
+}
+
+    .room-2-image-p{
+        font-size:30px;
+    }
+
+    .room-2-image-p2{
+        font-size:25px;
+    }

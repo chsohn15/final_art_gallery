@@ -24,7 +24,11 @@
     background-color: #ffffff;
     background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
 }
+.individual-buttons{
+    margin-left: 98px;
+}
 .individual-text{
+    padding-left: 98px;
     color:goldenrod;
 }
 #tour-background{

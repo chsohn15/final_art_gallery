@@ -87,7 +87,8 @@ function loadAudioRoom(paintings){
             zoomBox.append(zoomImg)
 
             saveBtn = document.createElement('button')
-            saveBtn.innerText = "*"
+            saveBtn.className= "individual-buttons"
+          saveBtn.innerHTML = `Save to My Collection <i class="fa fa-heart" style="font-size:20px;color:black"></i>`
             saveBtn.addEventListener("click", ()=> { 
                 
                 fetch("http://localhost:3000/painting_rooms"
@@ -105,7 +106,7 @@ function loadAudioRoom(paintings){
             )
 
             .then(res => res.json())
-            
+            saveBtn.innerHTML = `Saved! <i class="fa fa-heart" style="font-size:20px;color:black"></i>`
 
             Swal.fire({
                 title: 'You saved this image to your collection!',
@@ -117,6 +118,7 @@ function loadAudioRoom(paintings){
         })
         
         let backBtn = document.createElement('button')
+        backBtn.className= "individual-buttons"
         backBtn.innerText = "Back to 'Mythical Creatures' Collection"
 
         let br = document.createElement('br')
@@ -126,6 +128,7 @@ function loadAudioRoom(paintings){
       // Append visual tour button for first painting in series
       if (painting === paintings[0]){
           let tourBtn = document.createElement('button')
+          tourBtn.className= "individual-buttons"
           tourBtn.innerText = "Audio Tour"
           
           // Click on visual tour button to clear HTML and load visual tour
@@ -174,7 +177,7 @@ frame.style.display = "none"
 mainBody.append(frame)
 
 //Wait one second and load images
-setTimeout(function(){draw()}, 1000);
+setTimeout(function(){draw()}, 750);
 
 
 // Function to draw images and frames on canvas

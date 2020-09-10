@@ -69,7 +69,7 @@
 .card-img-top{
     object-fit:contain;
     max-height:300px; 
-    padding-top:20px;
+    padding-top:30px;
 }
 
 .card{

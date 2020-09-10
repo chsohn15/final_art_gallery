@@ -3,8 +3,8 @@
 #site-title{
     /* font-family: 'Tangerine', cursive; */
     font-family: 'Allura', cursive;
-    margin-left: 10px;
-    font-size: 30px;
+    margin-left: 6px;
+    font-size: 35px;
 }
 
 .nav-item{
@@ -53,6 +53,17 @@
 
 }
 
+.carousel-caption-text-1{
+    position:absolute;
+    padding-top: 5px;
+    left:20px;
+}
+
+.carousel-caption-text-2{
+    position:absolute;
+    padding-top: 35px;
+    left:20px;
+}
 
 
 .card-img-top{
@@ -71,14 +82,12 @@
 }
 
 .carousel-caption{
-    background: rgba(0, 0, 0, 0.3);
-
-    
+    background: rgba(0, 0, 0, 0.3); 
 }
 
 #carousel-caption-1, #carousel-caption-2, #carousel-caption-3{
     position:absolute;
-    top:415px;
+    top:450px;
     left:0px;
     height: 100px;
     width: 100%;

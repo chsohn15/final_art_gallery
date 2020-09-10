@@ -158,12 +158,14 @@ function loadAudioRoom(paintings){
 // Set distance of note from bottom of screen
 let bottom1 = 500
 
-// Function to load visual tour
+// Function to load audio tour
 function loadScroll(){
     
+
     const notes = [
-        "The Voyage of Life: Youth by Thomas Cole","Look at this marvelous painting", "Note 1", "Note 2"]
-    // const notes = paintings[0].notes.map(note => {
+        {content: "Im Spiel der Wellen",audio:'https://dl.dropbox.com/s/vxz7z92cfaw3hao/MOD%203%20final%20audiofile%20%20-%209%3A9%3A20%2C%205.25%20PM.mp3'},{content:"note",audio:"https://dl.dropbox.com/s/l64v34a07jithjg/mermaids.mp3" },{content:"note",audio:`https://dl.dropbox.com/s/ihqyhhu9fri1v51/centaur.mp3`}]
+
+        // const notes = paintings[0].notes.map(note => {
     //     return note.content
     // })
     let counter = 0;
@@ -175,7 +177,7 @@ function loadScroll(){
     
     
     
-    if (counter < 4){
+    if (counter < 3){
         notes.forEach(note => loadNote(note))
     }
     
@@ -199,10 +201,10 @@ function loadScroll(){
         }
         // Zoom to top left
         if (yOffset > 1000 && yOffset < 1422){
-            svgTag.style.transform = `scale(${getLinearValue(1000, 1422, 2.0, 2.6)})`
+            svgTag.style.transform = `scale(${getLinearValue(1000, 1422, 2.5, 1.5)})`
             svgTag.style.transformOrigin = `${getLinearValue(1000, 1422, 75, 25)}% ${getLinearValue(1000, 1422, 75, 25)}%`
+            // svgTag.style.transformOrigin = "25% 25%;"
             svgTag.style.transition = "transform .1s"
-            //svgTag.style.transformOrigin = "25% 25%;"
             //svgTag.style.transform = "scale(2.6)"
             
             //svgTag.style.transition = "width 1s,  height 1s, transform 1s"
@@ -212,11 +214,7 @@ function loadScroll(){
             svgTag.style.transition = "transform .2s"
         }
         //Zoom in on bottom left
-        if (yOffset > 1720 && yOffset < 2000){
-            svgTag.style.transform = `scale(${getLinearValue(1720, 2000, 2.6, 2.8)})`
-            svgTag.style.transformOrigin = `${getLinearValue(1720, 2000, 25, 25)}% ${getLinearValue(1720, 2000, 25, 75)}%`
-            //svgTag.style.transition = "transform .1s"
-        }
+     
         
         // Calculate linear value based on scroll position
         function getLinearValue(yOffset1, yOffset2, scale1, scale2){
@@ -251,9 +249,32 @@ function loadScroll(){
         bottom1 -= 800
         let p = document.createElement('p')
         p.className = "p-caption"
-        p.innerText = note
+        p.id = "notes"
+        p.innerText = note.content
+
+        let audioElement = document.createElement('audio')
+        audioElement.setAttribute('src', note.audio)
+            audioElement.id ="player"
+        
+        p.append(audioElement)
+       
+       
+       
+        // create play div
+        let playButton = document.createElement("div")
+        playButton.innerText ="play audio"
+
+        //create pause div
+        let pauseButton = document.createElement("div")
+        pauseButton.innerText = "pause"
+
+        p.append(playButton,pauseButton)
+        playButton.addEventListener("click", function(){audioElement.play()})
+        pauseButton.addEventListener("click",function(){audioElement.pause()})
+       
     
         figCaption.append(p)
+        // add sound to note 
         capContainer.append(figCaption)
         mainBody.append(capContainer)
         counter += 1

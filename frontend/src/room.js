@@ -1,5 +1,5 @@
 function loadRoom(paintings){
-    mainBody.setAttribute("style", "background-color:#4B0082;")
+    mainBody.setAttribute("style", "background-color: #780507;")
     let roomTitle = document.createElement('h2')
     
     roomTitle.innerText = paintings[0].rooms[0].name
@@ -43,6 +43,7 @@ function loadRoom(paintings){
         textDiv.addEventListener("click", function(){
             
             mainBody.innerHTML = ""
+            mainBody.setAttribute("style", "background-color:white;")
 
             // Painting title
             let imgHeader = document.createElement('h2')

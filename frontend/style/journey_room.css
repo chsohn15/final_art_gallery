@@ -9,7 +9,7 @@
     /* font-family: 'Cinzel', serif; */
     font-family: 'Tangerine', cursive;
     font-size:50px;
-    color: white;
+    color:#edd8d8;
 }
 
 canvas{
@@ -25,7 +25,7 @@ canvas{
     text-align:center;
     font-family: 'Tangerine', cursive;
     cursor:hand;
-    color: white;
+    color:#edd8d8;
 }
 
     .image-p{
@@ -35,3 +35,4 @@ canvas{
     .image-p2{
         font-size:25px;
     }
+

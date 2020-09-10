@@ -12,22 +12,23 @@ fetch("http://localhost:3000/users/")
 .then(res => res.json())
 .then(users => {
     user = users[0]
-    loadNavBar()
+    loadCarousel()
     loadHomePage()
     linkHomeButton()
     linkTitleButton()
     linkMyCollection()
+    linkInteractArtBtn()
   
 })
 
 // Add event listener to home button in navbar
 function linkHomeButton(){
-        mainBody.setAttribute("style", "background-color: white;")
+       
         let homeLink = document.getElementById('home-nav')
         
         homeLink.addEventListener("click",function(){
             mainBody.innerHTML = ""
-            loadNavBar()
+            loadCarousel()
             loadHomePage()
        
     })
@@ -38,13 +39,13 @@ function linkTitleButton(){
     mainBody.setAttribute("style", "background-color: white;")
     siteTitle.addEventListener("click",function(){
         mainBody.innerHTML = ""
-        loadNavBar()
+        loadCarousel()
         loadHomePage()
        
 })}
 
 function linkMyCollection(){
-    mainBody.setAttribute("style", "background-color: white;")
+
     userCollectionLink.addEventListener("click",function(){
         mainBody.innerHTML = ""
 
@@ -72,8 +73,14 @@ function linkMyCollection(){
     })
 }
 
+function linkInteractArtBtn(){
+    let interactArtBtn = document.querySelector('#interact-nav')
+    interactArtBtn.addEventListener("click",function(){
+        loadInteractiveArt()
+    })
+}
 
-function loadNavBar(){
+function loadCarousel(){
    
     mainBody.innerHTML = 
     `<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -114,7 +121,6 @@ function loadNavBar(){
       <span class="sr-only">Next</span>
     </a>
   </div>`
-  //linkMyCollection()
 
 }
 
@@ -168,7 +174,13 @@ function loadHomePage (){
     function loadExhibits(){
         mainBody.innerHTML = ""
 
-        mainBody.innerHTML = `
+        let mainExhibitDiv = document.createElement('div')
+        mainExhibitDiv.id = "main-exhibit-div"
+        mainBody.append(mainExhibitDiv)
+
+        mainExhibitDiv.innerHTML = `
+        <br>
+        <br>
         <div class="card mb-3">
             <img class="card-img-top" style="max-height:420px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg/1280px-Thomas_Cole_-_The_Voyage_of_Life_Old_Age%2C_1842_%28National_Gallery_of_Art%29.jpg" alt="Card image cap">
                 <div class="card-body" style="text-align:center;">
@@ -177,6 +189,7 @@ function loadHomePage (){
                     <button id="room1-button" type="button" class="btn btn-outline-secondary">Enter Exhibit</button>
                 </div>
         </div>
+        <br>
         <div class="card mb-3">
             <img class="card-img-top" style="max-height:500px;" src="https://uploads3.wikiart.org/images/pablo-picasso/still-life-with-cat-and-lobster-1962.jpg!Large.jpg" alt="Card image cap">
                 <div class="card-body" style="text-align:center;">
@@ -184,7 +197,8 @@ function loadHomePage (){
                     <p class="card-text">Experience the fantastical imaginations of visionary painters as they blur the boundaries between chaos and order.</p>
                     <button id="room2-button" type="button" class="btn btn-outline-secondary">Enter Exhibit</button>
                 </div>
-        </div>`
+        </div>
+        <br>`
 
         
         let room1Btn = document.getElementById('room1-button')

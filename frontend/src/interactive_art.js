@@ -1,7 +1,8 @@
-// When true, moving the mouse draws on the canvas
-
-document.body.innerHTML = 
-`<h1>Create Your Own Artwork!</h1>
+function loadInteractiveArt(){
+mainBody.innerHTML = "" 
+mainBody.innerHTML = 
+`<div id="interactive-art-container"
+<h1>Create Your Own Artwork!</h1>
 <canvas id="myCanvas" width="560" height="360"></canvas>
 
 <select id="color-selector">
@@ -31,7 +32,8 @@ document.body.innerHTML =
     <option value=9>9</option>
     <option value=10>10</option>
 </select>
-`
+<button id="img-save-btn">Save</button>
+</div>`
 
 let drawing = false;
 let x = 0;
@@ -82,25 +84,16 @@ window.addEventListener('mouseup', e => {
 
 });
 
-
-
-
-
-
-
-
-
-//https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event
-
 let selector = document.getElementById('background-color-selector')
 selector.addEventListener("change", function(){
   const backgroundColor = document.querySelector('#background-color-selector').value
   canvas.style.background = backgroundColor
 })
 
-// let imgSaveBtn = document.querySelector('#img-save-btn')
-// imgSaveBtn.addEventListener("click", function(ev){
-//   imgSaveBtn.href = canvas.toDataURL();
-//   imgSaveBtn.download = "mypainting.png";
-//   console.log(dataURL);
-// }, false)
+let imgSaveBtn = document.querySelector('#img-save-btn')
+imgSaveBtn.addEventListener("click", function(ev){
+  imgSaveBtn.href = canvas.toDataURL();
+  imgSaveBtn.download = "mypainting.png";
+  console.log(dataURL);
+}, false)
+}

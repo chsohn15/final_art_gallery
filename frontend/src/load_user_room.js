@@ -1,6 +1,11 @@
 function loadUserRoom(paintings){
+    let mainDiv = document.createElement('div')
+    mainDiv.id = "user-room-div"
+    
+    let roomTitle = document.createElement('h1')
+    roomTitle.innerText = "My Collection"
+    roomTitle.id = "my-collection-title"
 
-    let roomTitle = document.createElement('h2')
   
     let roomTable = document.createElement('table')
     let roomTableRow = document.createElement('tr')
@@ -18,15 +23,36 @@ function loadUserRoom(paintings){
         roomTableImg.id = "source"
         roomTableImg.style.display = "none"
         
+        // Create div for text 
+        let textDiv = document.createElement('div')
+        textDiv.className = "text-div"
+        textDiv.id = "text-div-user"
+        
         //Create image text
-        let imgP = document.createElement('span')
+        let imgP = document.createElement('p')
+        imgP.className = "image-p"
         imgP.innerText = painting.title
         imgP.dataset.id = painting.id 
+        
+        //Create artist text
+        let imgP2 = document.createElement('p')
+        imgP2.className = "image-p2"
+        imgP2.innerText = painting.artist
+        
+        textDiv.append(imgP, imgP2)
 
         // Link to show page of one painting on click
-        imgP.addEventListener("click", function(){
+        textDiv.addEventListener("click", function(){
             
             mainBody.innerHTML = ""
+
+            let paintingMainDiv = document.createElement('div')
+            paintingMainDiv.className = "painting-main-div"
+            paintingMainDiv.id = "my-collection-div"
+
+            let paintingTextDiv = document.createElement('div')
+            paintingTextDiv.className = "painting-text-div"
+            paintingTextDiv.id = "painting-text-div2"
 
             // Painting title
             let imgHeader = document.createElement('h2')
@@ -44,6 +70,8 @@ function loadUserRoom(paintings){
             let imgDate = document.createElement('h4')
             imgDate.innerText = `Date: ${painting.date}`
 
+            paintingTextDiv.append(imgHeader, imgArtist, imgMovement, imgDate)
+
             // Zoom box
             let zoomBox = document.createElement('div')
             zoomBox.className = "zoom-box"
@@ -54,16 +82,16 @@ function loadUserRoom(paintings){
                 $("img").jqZoom({
                     selectorWidth: 30,
                     selectorHeight: 30,
-                    viewerWidth: 400,
-                    viewerHeight: 300
+                    viewerWidth: 600,
+                    viewerHeight: 500
                 });
             })
 
             // Create image for zooming
             let zoomImg = document.createElement('img')
             zoomImg.src = painting.image_url 
-            zoomImg.width = "400"
-            zoomImg.height = "300"
+            zoomImg.width = "500"
+            zoomImg.height = "400"
             zoomBox.append(zoomImg)
 
             // Create remove button
@@ -115,7 +143,8 @@ function loadUserRoom(paintings){
 
         
 
-            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, backBtn, removeBtn, notesForm,notesUl)
+        paintingMainDiv.append(paintingTextDiv, zoomBox, removeBtn, backBtn, notesForm, notesUl)
+        mainBody.append(paintingMainDiv)
             
             backBtn.addEventListener("click", function(){
                 mainBody.innerHTML = ""
@@ -144,6 +173,20 @@ function loadUserRoom(paintings){
                     let notesLi = document.createElement("li")
                     notesLi.innerText = note.content
                     notesUl.append(notesLi)
+                    notesForm.reset()
+
+                    let deleteNoteBtn = document.createElement("button")
+                    deleteNoteBtn.innerText = "Delete This Note"
+                    deleteNoteBtn.dataset.id = note.id
+                    // deleteNoteBtn.value = note
+                    notesLi.append(deleteNoteBtn)
+                    
+                    deleteNoteBtn.addEventListener("click",function(e){
+                        let noteId =  e.target.dataset.id
+                        let configObj =  {   method: "DELETE" }
+                        fetch(`http://localhost:3000/notes/${noteId}`, configObj)
+                        .then(()=> notesLi.remove())
+                        })
                 })
                 
                 
@@ -195,7 +238,7 @@ function loadUserRoom(paintings){
 
         })
         roomTableImg.src = painting.image_url
-        roomTableData.append(roomTableImg, imgP)
+        roomTableData.append(roomTableImg, textDiv)
 
         // Append three paintings per row
         if (painting === paintings[0] || painting === paintings[1] || painting === paintings[2]){  
@@ -210,7 +253,8 @@ function loadUserRoom(paintings){
     
     // Append table to body
     roomTable.append(roomTableRow, roomTableRow2)
-    mainBody.append(roomTitle, roomTable)
+    mainDiv.append(roomTitle, roomTable)
+    mainBody.append(mainDiv)
 
     // Create a frame
     let frame = document.createElement('img')
@@ -228,6 +272,7 @@ function loadUserRoom(paintings){
         for (var i = 0; i < document.images.length; i++) {
             if (document.images[i].getAttribute('id') != 'frame') {
                 canvas = document.createElement('canvas');
+                canvas.className = "canvas-room-basic"
                 canvas.setAttribute('width', 400);
                 canvas.setAttribute('height', 300);
 

@@ -1,0 +1,11 @@
+#myCanvas {
+    border: 1px solid black;
+    width: 560px;
+    height: 360px;
+    background-color:white;
+  }
+
+  #interactive-art-container{
+    background-color: #4e87a6;
+    background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+  }

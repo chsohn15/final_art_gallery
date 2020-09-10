@@ -12,22 +12,23 @@ fetch("http://localhost:3000/users/")
 .then(res => res.json())
 .then(users => {
     user = users[0]
-    loadNavBar()
+    loadCarousel()
     loadHomePage()
     linkHomeButton()
     linkTitleButton()
     linkMyCollection()
+    linkInteractArtBtn()
   
 })
 
 // Add event listener to home button in navbar
 function linkHomeButton(){
-        mainBody.setAttribute("style", "background-color: white;")
+       
         let homeLink = document.getElementById('home-nav')
         
         homeLink.addEventListener("click",function(){
             mainBody.innerHTML = ""
-            loadNavBar()
+            loadCarousel()
             loadHomePage()
        
     })
@@ -38,13 +39,13 @@ function linkTitleButton(){
     mainBody.setAttribute("style", "background-color: white;")
     siteTitle.addEventListener("click",function(){
         mainBody.innerHTML = ""
-        loadNavBar()
+        loadCarousel()
         loadHomePage()
        
 })}
 
 function linkMyCollection(){
-    //mainBody.setAttribute("style", "background-color: #780507;")
+
     userCollectionLink.addEventListener("click",function(){
         mainBody.innerHTML = ""
 
@@ -72,8 +73,14 @@ function linkMyCollection(){
     })
 }
 
+function linkInteractArtBtn(){
+    let interactArtBtn = document.querySelector('#interact-nav')
+    interactArtBtn.addEventListener("click",function(){
+        loadInteractiveArt()
+    })
+}
 
-function loadNavBar(){
+function loadCarousel(){
    
     mainBody.innerHTML = 
     `<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -114,7 +121,6 @@ function loadNavBar(){
       <span class="sr-only">Next</span>
     </a>
   </div>`
-  //linkMyCollection()
 
 }
 

@@ -96,7 +96,7 @@ function loadRoom(paintings){
             // zoomBox.append(zoomImg, imgHeader, imgArtist, imgMovement, imgDate)
 
             saveBtn = document.createElement('button')
-            saveBtn.innerText = "*"
+            saveBtn.innerHTML = `Save to My Collection <i class="fa fa-heart" style="font-size:20px;color:black"></i>`
             saveBtn.addEventListener("click", ()=> { 
                 
                 fetch("http://localhost:3000/painting_rooms"

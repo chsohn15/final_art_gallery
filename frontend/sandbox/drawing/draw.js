@@ -31,7 +31,7 @@ document.body.innerHTML =
     <option value=9>9</option>
     <option value=10>10</option>
 </select>
-<button id="img-save-btn">Save</button>`
+`
 
 let drawing = false;
 let x = 0;
@@ -98,9 +98,9 @@ selector.addEventListener("change", function(){
   canvas.style.background = backgroundColor
 })
 
-let imgSaveBtn = document.querySelector('#img-save-btn')
-imgSaveBtn.addEventListener("click", function(ev){
-  imgSaveBtn.href = canvas.toDataURL();
-  imgSaveBtn.download = "mypainting.png";
-  console.log(dataURL);
-}, false)
+// let imgSaveBtn = document.querySelector('#img-save-btn')
+// imgSaveBtn.addEventListener("click", function(ev){
+//   imgSaveBtn.href = canvas.toDataURL();
+//   imgSaveBtn.download = "mypainting.png";
+//   console.log(dataURL);
+// }, false)

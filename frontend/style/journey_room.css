@@ -4,10 +4,12 @@
 
 #room-1-title{
     text-align:center;
+    padding-top: 20px;
     /* padding-bottom: 10px; */
     /* font-family: 'Cinzel', serif; */
     font-family: 'Tangerine', cursive;
     font-size:50px;
+    color: white;
 }
 
 canvas{
@@ -23,6 +25,7 @@ canvas{
     text-align:center;
     font-family: 'Tangerine', cursive;
     cursor:hand;
+    color: white;
 }
 
     .image-p{

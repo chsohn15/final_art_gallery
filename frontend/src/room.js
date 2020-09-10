@@ -115,6 +115,8 @@ function loadRoom(paintings){
             .then(res => res.json())
             .then(res => {console.log(res)})
             
+            saveBtn.innerText = "Saved!"
+
             Swal.fire({
                 title: 'You saved this image to your collection!',
                 imageUrl: `${painting.image_url}`,

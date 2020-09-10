@@ -1,8 +1,6 @@
 function loadUserRoom(paintings){
     let mainDiv = document.createElement('div')
-    //mainDiv.className = "main-div"
     mainDiv.id = "user-room-div"
-    //mainDiv.setAttribute("style", "background-color: #FFE4E1;")
     
     let roomTitle = document.createElement('h1')
     roomTitle.innerText = "My Collection"
@@ -48,6 +46,14 @@ function loadUserRoom(paintings){
             
             mainBody.innerHTML = ""
 
+            let paintingMainDiv = document.createElement('div')
+            paintingMainDiv.className = "painting-main-div"
+            paintingMainDiv.id = "my-collection-div"
+
+            let paintingTextDiv = document.createElement('div')
+            paintingTextDiv.className = "painting-text-div"
+            paintingTextDiv.id = "painting-text-div2"
+
             // Painting title
             let imgHeader = document.createElement('h2')
             imgHeader.innerText = painting.title
@@ -63,6 +69,8 @@ function loadUserRoom(paintings){
             // Painting date
             let imgDate = document.createElement('h4')
             imgDate.innerText = `Date: ${painting.date}`
+
+            paintingTextDiv.append(imgHeader, imgArtist, imgMovement, imgDate)
 
             // Zoom box
             let zoomBox = document.createElement('div')
@@ -135,7 +143,8 @@ function loadUserRoom(paintings){
 
         
 
-            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, backBtn, removeBtn, notesForm,notesUl)
+        paintingMainDiv.append(paintingTextDiv, zoomBox)
+        mainBody.append(paintingMainDiv)
             
             backBtn.addEventListener("click", function(){
                 mainBody.innerHTML = ""

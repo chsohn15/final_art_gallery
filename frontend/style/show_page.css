@@ -1,3 +1,4 @@
+/* Room 1 Show Page */
 .painting-text-div{
     margin-left:100;
     display: inline-block;
@@ -8,15 +9,21 @@
 .painting-main-div{
     background-color: #913459;
     background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
-height: 125%;
+    height: 125%;
 }
-
-
 
 .zoom-box{
     margin-left:100;
 }
 
-/* .painting-header, .painting-artist{
-    display: inline-block;
-} */
+/* My Collection Show Page */
+
+#painting-text-div2{
+    color:black;
+}
+
+#my-collection-div{
+    background-color: #de9292;
+    background-image: url("https://www.transparenttextures.com/patterns/cross-scratches.png");
+}
+

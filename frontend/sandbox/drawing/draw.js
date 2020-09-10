@@ -10,9 +10,21 @@ const context = myCanvas.getContext('2d');
 
 // Add the event listeners for mousedown, mousemove, and mouseup
 function drawLine(context, x1, y1, x2, y2) {
+
+    const color = document.querySelector('#color-picker').value
+    const thickness = document.querySelector('#thickness-picker').value
+    const backgroundColor = document.querySelector('#background-color-picker').value
+    //debugger
+    const canvas = document.getElementById('myCanvas')
+    canvas.style.background = backgroundColor
+    // context.fillStyle = backgroundColor
+    // context.fillRect(0, 0, canvas.width, canvas.height)
+
+    context.globalCompositeOperation = 'destination-over';
+
     context.beginPath();
-    context.strokeStyle = 'black';
-    context.lineWidth = 3;
+    context.strokeStyle = color;
+    context.lineWidth = thickness;
     context.moveTo(x1, y1);
     context.lineTo(x2, y2);
     context.stroke();
@@ -40,7 +52,13 @@ window.addEventListener('mouseup', e => {
     y = 0;
     drawing = false;
   }
+
+  
 });
+
+
+
+
 
 
 

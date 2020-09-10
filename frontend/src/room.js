@@ -1,5 +1,6 @@
 function loadRoom(paintings){
-    mainBody.setAttribute("style", "background-color: #780507;")
+    //mainBody.setAttribute("style", "background-color: #780507;")
+
     let roomTitle = document.createElement('h2')
     
     roomTitle.innerText = paintings[0].rooms[0].name
@@ -178,6 +179,7 @@ function loadRoom(paintings){
         for (var i = 0; i < document.images.length; i++) {
             if (document.images[i].getAttribute('id') != 'frame') {
                 canvas = document.createElement('canvas');
+                canvas.className = "canvas-room-1"
                 canvas.setAttribute('width', 400);
                 canvas.setAttribute('height', 300);
 

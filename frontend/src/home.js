@@ -22,6 +22,7 @@ fetch("http://localhost:3000/users/")
 
 // Add event listener to home button in navbar
 function linkHomeButton(){
+        mainBody.setAttribute("style", "background-color: white;")
         let homeLink = document.getElementById('home-nav')
         
         homeLink.addEventListener("click",function(){
@@ -34,6 +35,7 @@ function linkHomeButton(){
 
 //Add event listener to site title in navbar 
 function linkTitleButton(){
+    mainBody.setAttribute("style", "background-color: white;")
     siteTitle.addEventListener("click",function(){
         mainBody.innerHTML = ""
         loadNavBar()
@@ -42,6 +44,7 @@ function linkTitleButton(){
 })}
 
 function linkMyCollection(){
+    mainBody.setAttribute("style", "background-color: white;")
     userCollectionLink.addEventListener("click",function(){
         mainBody.innerHTML = ""
 

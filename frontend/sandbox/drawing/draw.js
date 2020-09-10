@@ -30,7 +30,8 @@ document.body.innerHTML =
     <option value=8>8</option>
     <option value=9>9</option>
     <option value=10>10</option>
-</select>`
+</select>
+<button id="img-save-btn">Save</button>`
 
 let drawing = false;
 let x = 0;
@@ -39,19 +40,11 @@ let y = 0;
 const myPics = document.getElementById('myPics');
 const context = myCanvas.getContext('2d');
 
-// event.offsetX, event.offsetY gives the (x,y) offset from the edge of the canvas.
 
-// Add the event listeners for mousedown, mousemove, and mouseup
 function drawLine(context, x1, y1, x2, y2) {
 
     const color = document.querySelector('#color-selector').value
     const thickness = document.querySelector('#thickness-selector').value
-    const backgroundColor = document.querySelector('#background-color-selector').value
-    //debugger
-    const canvas = document.getElementById('myCanvas')
-    canvas.style.background = backgroundColor
-    // context.fillStyle = backgroundColor
-    // context.fillRect(0, 0, canvas.width, canvas.height)
 
     context.globalCompositeOperation = 'destination-over';
 
@@ -86,7 +79,6 @@ window.addEventListener('mouseup', e => {
     drawing = false;
   }
 
-  
 });
 
 
@@ -95,4 +87,17 @@ window.addEventListener('mouseup', e => {
 
 
 
+
+
 //https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event
+
+let selector = document.getElementById('background-color-selector')
+selector.addEventListener("change", function(){
+  const backgroundColor = document.querySelector('#background-color-selector').value
+  const canvas = document.getElementById('myCanvas')
+  canvas.style.background = backgroundColor
+})
+
+img-save-btn.addEventListener("click", function(){
+  
+})

@@ -163,6 +163,19 @@ function loadUserRoom(paintings){
                     let notesLi = document.createElement("li")
                     notesLi.innerText = note.content
                     notesUl.append(notesLi)
+
+                    let deleteNoteBtn = document.createElement("button")
+                    deleteNoteBtn.innerText = "Delete This Note"
+                    deleteNoteBtn.dataset.id = note.id
+                    // deleteNoteBtn.value = note
+                    notesLi.append(deleteNoteBtn)
+                    
+                    deleteNoteBtn.addEventListener("click",function(e){
+                        let noteId =  e.target.dataset.id
+                        let configObj =  {   method: "DELETE" }
+                        fetch(`http://localhost:3000/notes/${noteId}`, configObj)
+                        .then(()=> notesLi.remove())
+                        })
                 })
                 
                 

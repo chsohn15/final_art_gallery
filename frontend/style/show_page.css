@@ -1,5 +1,5 @@
 .painting-text-div{
-    margin:10;
+    margin-left:100;
     display: inline-block;
     margin-top: 20;
 }
@@ -7,7 +7,7 @@
 
 
 .zoom-box{
-    margin-left:150;
+    margin-left:100;
 }
 
 /* .painting-header, .painting-artist{

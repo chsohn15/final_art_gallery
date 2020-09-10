@@ -129,11 +129,14 @@ function loadRoom(paintings){
         backBtn.innerText = "Back to 'Epic Journeys' Collection"
 
         let br = document.createElement('br')
-        paintingMainDiv.append(paintingTextDiv, zoomBox, saveBtn)
+        let btnDiv = document.createElement('div')
+        btnDiv.className = "painting-buttons-container"
+
         
             // Append visual tour button for first painting in series
             if (painting === paintings[0]){
                 let tourBtn = document.createElement('button')
+                tourBtn.className = "visual-tour-button"
                 tourBtn.innerText = "Visual Tour"
 
                 // Click on visual tour button to clear HTML and load visual tour
@@ -145,11 +148,13 @@ function loadRoom(paintings){
                     // Load visual tour feature
                     loadVisualScroll(paintings[0])
                 })
-                paintingMainDiv.append(tourBtn)
+                btnDiv.append(tourBtn)
             }
 
-            paintingMainDiv.append(br, backBtn)
-            mainBody.append(paintingMainDiv)
+        btnDiv.append(saveBtn, br, br, backBtn)
+        paintingMainDiv.append(paintingTextDiv, zoomBox, btnDiv)
+
+        mainBody.append(paintingMainDiv)
 
             backBtn.addEventListener("click", function(){
                 mainBody.innerHTML = ""

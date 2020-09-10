@@ -21,13 +21,25 @@ function loadRoom(paintings){
         roomTableImg.id = "source"
         roomTableImg.style.display = "none"
         
+        // Create div for text 
+        let textDiv = document.createElement('div')
+        textDiv.id = "text-div"
+
         //Create image text
         let imgP = document.createElement('p')
+        imgP.className = "image-p"
         imgP.innerText = painting.title
         imgP.dataset.id = painting.id 
 
+        //Create artist text
+        let imgP2 = document.createElement('p')
+        imgP2.className = "image-p2"
+        imgP2.innerText = painting.artist
+
+        textDiv.append(imgP, imgP2)
+
         // Link to show page of one painting on click
-        imgP.addEventListener("click", function(){
+        textDiv.addEventListener("click", function(){
             
             mainBody.innerHTML = ""
 
@@ -130,7 +142,7 @@ function loadRoom(paintings){
 
         
         roomTableImg.src = painting.image_url
-        roomTableData.append(roomTableImg, imgP)
+        roomTableData.append(roomTableImg, textDiv)
 
         // Append three paintings per row
         if (painting === paintings[0] || painting === paintings[1] || painting === paintings[2]){  

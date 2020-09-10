@@ -13,6 +13,22 @@
 canvas{
     position:relative;
     padding-left: 40px;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-bottom:10px;
 }
+
+#text-div{
+    position:relative;
+    padding-left: 10px;
+    text-align:center;
+    font-family: 'Tangerine', cursive;
+    cursor:hand;
+}
+
+    .image-p{
+        font-size:30px;
+    }
+
+    .image-p2{
+        font-size:25px;
+    }

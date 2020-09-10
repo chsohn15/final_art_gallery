@@ -3,7 +3,7 @@ function loadUserRoom(paintings){
     mainDiv.className = "main-div"
     mainDiv.setAttribute("style", "background-color: #FFE4E1;")
     
-    let roomTitle = document.createElement('h2')
+    let roomTitle = document.createElement('h1')
     roomTitle.innerText = "My Collection"
     roomTitle.id = "my-collection-title"
 

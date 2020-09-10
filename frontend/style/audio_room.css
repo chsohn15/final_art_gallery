@@ -7,11 +7,12 @@
     /* font-family: 'Cinzel', serif; */
     font-family: 'Tangerine', cursive;
     font-size:50px;
-    color:#cccaca;
+    color:#9b9999;
 }
 .background{
-    background-color: #2b4470;
-    background-image: url("https://www.transparenttextures.com/patterns/ice-age.png");
+     background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
+
 }
 .canvas-room-2{
     position:relative;
@@ -20,12 +21,15 @@
     padding-bottom:10px;
 }
 .individual-painting{
-
-    background-color: #000000;
-background-image: url("https://www.transparenttextures.com/patterns/wall-4-light.png");
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
 }
 .individual-text{
-    color:#ffffff;
+    color:goldenrod;
+}
+#tour-background{
+    background-color: #ffffff;
+background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
 }
 
 #room-2-text-div{
@@ -34,7 +38,7 @@ background-image: url("https://www.transparenttextures.com/patterns/wall-4-light
     text-align:center;
     font-family: 'Tangerine', cursive;
     cursor:hand;
-    color:#cccaca;
+    color: goldenrod;
 }
 
     .room-2-image-p{
@@ -44,3 +48,58 @@ background-image: url("https://www.transparenttextures.com/patterns/wall-4-light
     .room-2-image-p2{
         font-size:25px;
     }
+    #notes{
+        font-size: 30px;
+        font-family: 'Cookie', cursive;
+    }
+    #playbtn {
+        background: #222;
+        height: 50px;
+        min-width: 150px;
+        border: none;
+        border-radius: 10px;
+        color: #eee;
+        font-size: 30px;
+        font-family: 'Cookie', cursive;
+        position: relative;
+        transition: 1s;
+        -webkit-tap-highlight-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding-top: 5px;
+      }
+      
+      #playbtn #circle {
+        width: 7px;
+        height: 7px;
+        background: transparent;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        overflow: hidden;
+        transition: 500ms;
+      }
+      
+      .noselect {
+        -webkit-touch-callout: none;
+          -webkit-user-select: none;
+           -khtml-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+                  user-select: none;
+      }
+      
+      #playbtn:hover {
+        background: transparent;
+      }
+      
+      /* #playbtn:hover #circle {
+        height: 50px;
+        width: 150px;
+        left: 0;
+        border-radius: 0;
+        border-bottom: 2px solid #eee;
+      } */

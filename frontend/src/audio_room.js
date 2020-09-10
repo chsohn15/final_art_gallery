@@ -105,7 +105,7 @@ function loadAudioRoom(paintings){
             )
 
             .then(res => res.json())
-            .then(res => {console.log(res)})
+            
 
             Swal.fire({
                 title: 'You saved this image to your collection!',
@@ -122,96 +122,98 @@ function loadAudioRoom(paintings){
         let br = document.createElement('br')
     paintingDiv.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)
       mainBody.append(paintingDiv)  
-            
-            // Append visual tour button for first painting in series
-            if (painting === paintings[0]){
-                let tourBtn = document.createElement('button')
-                tourBtn.innerText = "Audio Tour"
-
-                // Click on visual tour button to clear HTML and load visual tour
-                tourBtn.addEventListener("click", function(){
-                    console.log(painting.image_url)
-                    mainBody.innerHTML = ""
-                    mainBody.innerHTML = `<svg  version="1.1"  viewport="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image id="voyage-youth" href="${painting.image_url}" x="0" y="0" height= "90%" width="100%" ></svg>`
-                    
-                    // Load visual tour feature
-                    loadScroll()
-                })
-                paintingDiv.append(tourBtn)
-            }
-            paintingDiv.append(br, backBtn)
-
-            backBtn.addEventListener("click", function(){
-                mainBody.innerHTML = ""
-                loadAudioRoom(paintings)
+      
+      // Append visual tour button for first painting in series
+      if (painting === paintings[0]){
+          let tourBtn = document.createElement('button')
+          tourBtn.innerText = "Audio Tour"
+          
+          // Click on visual tour button to clear HTML and load visual tour
+          tourBtn.addEventListener("click", function(){
+              
+              mainBody.innerHTML = ""
+              mainBody.innerHTML = `<svg  version="""1.1"  viewport="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image id="voyage-youth" href="${painting.image_url}" x="0" y="0" height= "90%" width="100%" ></svg>`
+              
+              // Load visual tour feature
+              loadScroll()
             })
-        })
-
+            paintingDiv.append(tourBtn)
+        }
+        paintingDiv.append(br, backBtn)
         
-        roomTableImg.src = painting.image_url
-        roomTableData.append(roomTableImg, textDiv)
-
-        // Append three paintings per row
-        if (painting === paintings[0] || painting === paintings[1] || painting === paintings[2]){  
-            roomTableRow.append(roomTableData)
-        }
-        else{
-            roomTableRow2.append(roomTableData)
-        }
-
-
+        backBtn.addEventListener("click", function(){
+            mainBody.innerHTML = ""
+            loadAudioRoom(paintings)
+        })
     })
     
-    // Append table to body
-    roomTable.append(roomTableRow, roomTableRow2)
-    roomDiv.append(roomTitle, roomTable)
-    mainBody.append(roomDiv)
-    // Create a frame
-    let frame = document.createElement('img')
-    frame.id = "frame"
-    frame.src = "https://www.onlygfx.com/wp-content/uploads/2020/01/gold-picture-frame-1.png"
-    frame.style.display = "none"
-    mainBody.append(frame)
     
-    //Wait one second and load images
-    setTimeout(function(){draw()}, 1000);
-
+    roomTableImg.src = painting.image_url
+    roomTableData.append(roomTableImg, textDiv)
     
-    // Function to draw images and frames on canvas
-    function draw() {
-        for (var i = 0; i < document.images.length; i++) {
-            if (document.images[i].getAttribute('id') != 'frame') {
-                canvas = document.createElement('canvas');
-                canvas.className ="canvas-room-2"
-                canvas.setAttribute('width', 400);
-                canvas.setAttribute('height', 300);
+    // Append three paintings per row
+    if (painting === paintings[0] || painting === paintings[1] || painting === paintings[2]){  
+        roomTableRow.append(roomTableData)
+    }
+    else{
+        roomTableRow2.append(roomTableData)
+    }
+    
+    
+})
 
-                document.images[i].parentNode.insertBefore(canvas,document.images[i]);
+// Append table to body
+roomTable.append(roomTableRow, roomTableRow2)
+roomDiv.append(roomTitle, roomTable)
+mainBody.append(roomDiv)
+// Create a frame
+let frame = document.createElement('img')
+frame.id = "frame"
+frame.src = "https://www.onlygfx.com/wp-content/uploads/2020/01/gold-picture-frame-1.png"
+frame.style.display = "none"
+mainBody.append(frame)
 
-                ctx = canvas.getContext('2d');
+//Wait one second and load images
+setTimeout(function(){draw()}, 1000);
 
-                ctx.drawImage(document.images[i], 35, 37,325,225);
-                ctx.drawImage(document.getElementById('frame'), 0, 0, 400, 300);
-            }
+
+// Function to draw images and frames on canvas
+function draw() {
+    for (var i = 0; i < document.images.length; i++) {
+        if (document.images[i].getAttribute('id') != 'frame') {
+            canvas = document.createElement('canvas');
+            canvas.className ="canvas-room-2"
+            canvas.setAttribute('width', 400);
+            canvas.setAttribute('height', 300);
+            
+            document.images[i].parentNode.insertBefore(canvas,document.images[i]);
+            
+            ctx = canvas.getContext('2d');
+            
+            ctx.drawImage(document.images[i], 35, 37,325,225);
+            ctx.drawImage(document.getElementById('frame'), 0, 0, 400, 300);
         }
     }
+}
 }
 // Set distance of note from bottom of screen
 let bottom1 = 500
 
+let tourDiv = document.createElement("div")
+tourDiv.id = "tour-background"
 // Function to load audio tour
 function loadScroll(){
     
-
+    
     const notes = [
         {content: "Im Spiel der Wellen by Arnold Böcklin",audio:'https://dl.dropbox.com/s/vxz7z92cfaw3hao/MOD%203%20final%20audiofile%20%20-%209%3A9%3A20%2C%205.25%20PM.mp3'},{content:"",audio:"https://dl.dropbox.com/s/l64v34a07jithjg/mermaids.mp3" },{content:"",audio:`https://dl.dropbox.com/s/ihqyhhu9fri1v51/centaur.mp3`}]
-
+        
         // const notes = paintings[0].notes.map(note => {
-    //     return note.content
-    // })
-    let counter = 0;
-    //const main1= document.getElementById('main1')
-    const image = document.getElementById('voyage-youth')
+            //     return note.content
+            // })
+            let counter = 0;
+            //const main1= document.getElementById('main1')
+            const image = document.getElementById('voyage-youth')
     image.width = window.innerWidth
     const imgContainer = document.querySelector("figure.painting")
     const svgTag = document.querySelector('svg')
@@ -224,7 +226,7 @@ function loadScroll(){
     
     // Create picture zoom-in that is responsive to scroll
     window.onscroll = () => {
-    
+        
         let yOffset = window.pageYOffset 
     
         if (yOffset > 250 && yOffset < 766){
@@ -303,12 +305,23 @@ function loadScroll(){
        
         // create play div
         let playButton = document.createElement("div")
-        playButton.innerText ="play audio"
-
+        playButton.id ="playbtn"
+        let playSpan = document.createElement("span")
+        playSpan.className ="noselect"
+        playSpan.innerText= "play audio"
+        let playDiv = document.createElement("div")
+        playDiv.id ="circle"
         //create pause div
         let pauseButton = document.createElement("div")
-        pauseButton.innerText = "pause"
+        pauseButton.id = "playbtn"
+        let pauseSpan = document.createElement("span")
+        pauseSpan.className ="noselect"
+        pauseSpan.innerText= "pause audio"
+        let pauseDiv = document.createElement("div")
+        pauseDiv.id ="circle"
 
+        playButton.append(playSpan,playDiv)
+        pauseButton.append(pauseSpan,pauseDiv)
         p.append(playButton,pauseButton)
         playButton.addEventListener("click", function(){audioElement.play()})
         pauseButton.addEventListener("click",function(){audioElement.pause()})
@@ -317,7 +330,9 @@ function loadScroll(){
         figCaption.append(p)
         // add sound to note 
         capContainer.append(figCaption)
-        mainBody.append(capContainer)
+        
+        tourDiv.append(capContainer)
+        mainBody.append(tourDiv)
         counter += 1
     }
     }

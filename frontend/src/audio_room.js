@@ -128,7 +128,6 @@ function loadAudioRoom(paintings){
       // Append visual tour button for first painting in series
       if (painting === paintings[0]){
           let tourBtn = document.createElement('button')
-          tourBtn.className= "individual-buttons"
           tourBtn.innerText = "Audio Tour"
           
           // Click on visual tour button to clear HTML and load visual tour

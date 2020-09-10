@@ -1,10 +1,11 @@
 function loadInteractiveArt(){
 mainBody.innerHTML = "" 
 mainBody.innerHTML = 
-`<div id="interactive-art-container"
-<h1>Create Your Own Artwork!</h1>
-<canvas id="myCanvas" width="560" height="360"></canvas>
-
+`<div id="interactive-art-container">
+<h1 id="int-art-title">Create Your Own Work of Art!</h1><br>
+<canvas id="myCanvas" width="560" height="360"></canvas><br>
+<div id="selector-div">
+<span class="select-title">Paint Color:</span>
 <select id="color-selector">
     <option value="black">Black</option>
     <option value="red">Red</option>
@@ -13,6 +14,7 @@ mainBody.innerHTML =
     <option value="yellow">Yellow</option>
     <option value="purple">Purple</option>
 </select>
+<span class="select-title">Background Color:</span>
 <select id="background-color-selector">
     <option value="white">White</option>
     <option value="#00BFFF">Sky Blue</option>
@@ -20,6 +22,7 @@ mainBody.innerHTML =
     <option value="#FFFF99">Yellow</option>
     <option value="#C71585">Violet Red</option>
 </select>
+<span class="select-title">Thickness:</span>
 <select id="thickness-selector">
     <option value=1>1</option>
     <option value=2>2</option>
@@ -32,7 +35,7 @@ mainBody.innerHTML =
     <option value=9>9</option>
     <option value=10>10</option>
 </select>
-<button id="img-save-btn">Save</button>
+</div>
 </div>`
 
 let drawing = false;

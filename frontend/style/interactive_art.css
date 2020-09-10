@@ -1,11 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
 #myCanvas {
     border: 1px solid black;
-    width: 560px;
-    height: 360px;
+    width: 610px;
+    height: 400px;
     background-color:white;
+    margin-left: 410px;
   }
 
   #interactive-art-container{
     background-color: #4e87a6;
     background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
-  }
+    height: 125%
+}
+#int-art-title{
+    padding-top: 20px;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Architects Daughter', cursive;
+}
+
+#selector-div{
+    padding-top: 25px;
+    margin-left: 420px;
+    display: inline-block;
+    font-family: 'Architects Daughter', cursive;
+    font-size:17px;
+}
+
+.select-title{
+    font-size:19px;
+}

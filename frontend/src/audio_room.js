@@ -163,7 +163,7 @@ function loadScroll(){
     
 
     const notes = [
-        {content: "Im Spiel der Wellen",audio:'https://dl.dropbox.com/s/vxz7z92cfaw3hao/MOD%203%20final%20audiofile%20%20-%209%3A9%3A20%2C%205.25%20PM.mp3'},{content:"note",audio:"https://dl.dropbox.com/s/l64v34a07jithjg/mermaids.mp3" },{content:"note",audio:`https://dl.dropbox.com/s/ihqyhhu9fri1v51/centaur.mp3`}]
+        {content: "Im Spiel der Wellen by Arnold Böcklin",audio:'https://dl.dropbox.com/s/vxz7z92cfaw3hao/MOD%203%20final%20audiofile%20%20-%209%3A9%3A20%2C%205.25%20PM.mp3'},{content:"",audio:"https://dl.dropbox.com/s/l64v34a07jithjg/mermaids.mp3" },{content:"",audio:`https://dl.dropbox.com/s/ihqyhhu9fri1v51/centaur.mp3`}]
 
         // const notes = paintings[0].notes.map(note => {
     //     return note.content
@@ -201,9 +201,9 @@ function loadScroll(){
         }
         // Zoom to top left
         if (yOffset > 1000 && yOffset < 1422){
-            svgTag.style.transform = `scale(${getLinearValue(1000, 1422, 2.5, 1.5)})`
-            svgTag.style.transformOrigin = `${getLinearValue(1000, 1422, 75, 25)}% ${getLinearValue(1000, 1422, 75, 25)}%`
-            // svgTag.style.transformOrigin = "25% 25%;"
+            svgTag.style.transform = `scale(${getLinearValue(1000, 1422, 2.0, 2.6)})`
+            svgTag.style.transformOrigin = `${getLinearValue(1000, 1422, 70, 25)}% ${getLinearValue(1000, 1422, 70, 10)}%`
+            // svgTag.style.transformOrigin = "75% 50%;"
             svgTag.style.transition = "transform .1s"
             //svgTag.style.transform = "scale(2.6)"
             

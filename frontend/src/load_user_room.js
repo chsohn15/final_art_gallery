@@ -1,6 +1,12 @@
 function loadUserRoom(paintings){
-
+    let mainDiv = document.createElement('div')
+    mainDiv.className = "main-div"
+    mainDiv.setAttribute("style", "background-color: #FFE4E1;")
+    
     let roomTitle = document.createElement('h2')
+    roomTitle.innerText = "My Collection"
+    roomTitle.id = "my-collection-title"
+
   
     let roomTable = document.createElement('table')
     let roomTableRow = document.createElement('tr')
@@ -18,13 +24,26 @@ function loadUserRoom(paintings){
         roomTableImg.id = "source"
         roomTableImg.style.display = "none"
         
+        // Create div for text 
+        let textDiv = document.createElement('div')
+        textDiv.className = "text-div"
+        textDiv.id = "text-div-user"
+        
         //Create image text
-        let imgP = document.createElement('span')
+        let imgP = document.createElement('p')
+        imgP.className = "image-p"
         imgP.innerText = painting.title
         imgP.dataset.id = painting.id 
+        
+        //Create artist text
+        let imgP2 = document.createElement('p')
+        imgP2.className = "image-p2"
+        imgP2.innerText = painting.artist
+        
+        textDiv.append(imgP, imgP2)
 
         // Link to show page of one painting on click
-        imgP.addEventListener("click", function(){
+        textDiv.addEventListener("click", function(){
             
             mainBody.innerHTML = ""
 
@@ -195,7 +214,7 @@ function loadUserRoom(paintings){
 
         })
         roomTableImg.src = painting.image_url
-        roomTableData.append(roomTableImg, imgP)
+        roomTableData.append(roomTableImg, textDiv)
 
         // Append three paintings per row
         if (painting === paintings[0] || painting === paintings[1] || painting === paintings[2]){  
@@ -210,7 +229,8 @@ function loadUserRoom(paintings){
     
     // Append table to body
     roomTable.append(roomTableRow, roomTableRow2)
-    mainBody.append(roomTitle, roomTable)
+    mainDiv.append(roomTitle, roomTable)
+    mainBody.append(mainDiv)
 
     // Create a frame
     let frame = document.createElement('img')
@@ -228,6 +248,7 @@ function loadUserRoom(paintings){
         for (var i = 0; i < document.images.length; i++) {
             if (document.images[i].getAttribute('id') != 'frame') {
                 canvas = document.createElement('canvas');
+                canvas.className = "canvas-room-basic"
                 canvas.setAttribute('width', 400);
                 canvas.setAttribute('height', 300);
 

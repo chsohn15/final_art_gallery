@@ -181,7 +181,7 @@ function loadRoom(paintings){
         for (var i = 0; i < document.images.length; i++) {
             if (document.images[i].getAttribute('id') != 'frame') {
                 canvas = document.createElement('canvas');
-                canvas.className = "canvas-room-1"
+                canvas.className = "canvas-room-basic"
                 canvas.setAttribute('width', 400);
                 canvas.setAttribute('height', 300);
 

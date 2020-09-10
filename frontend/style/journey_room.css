@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Kaushan+Script&family=Tangerine:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+/* Journey Room styling */
 #room-1-title{
     text-align:center;
     padding-top: 20px;
@@ -17,7 +18,7 @@
     height:100%;
     margin:0;
 }
-.canvas-room-1{
+.canvas-room-basic{
     position:relative;
     padding-left: 40px;
     padding-top: 10px;
@@ -40,4 +41,16 @@
     .image-p2{
         font-size:25px;
     }
+
+/* User room style */
+#text-div-user{
+    color:black;
+    font-family: 'Dancing Script', cursive;
+    /* text-align:center; */
+}
+
+#my-collection-title{
+    font-family: 'Dancing Script', cursive;
+    text-align:center;
+}
 

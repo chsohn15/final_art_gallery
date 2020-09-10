@@ -17,8 +17,11 @@
     width:100%;
     height:125%;
     margin:0;
-    background-color: #a33241;
-    background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png");
+
+    background-color: #913459;
+    background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+    /* background-color: #a33241;
+    background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png"); */
 }
 
 .canvas-room-basic{

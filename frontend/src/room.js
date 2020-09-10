@@ -96,6 +96,9 @@ function loadRoom(paintings){
 
             saveBtn = document.createElement('button')
             saveBtn.innerHTML = `Save to My Collection <i class="fa fa-heart" style="font-size:20px;color:black"></i>`
+            saveBtn.className = "btn btn-light"
+            saveBtn.id = "room-1-save-btn"
+            saveBtn.setAttribute = ("style", "background-color: #F099D2 !important;")
             saveBtn.addEventListener("click", ()=> { 
                 
                 fetch("http://localhost:3000/painting_rooms"
@@ -126,6 +129,8 @@ function loadRoom(paintings){
         })
 
         let backBtn = document.createElement('button')
+        backBtn.className = "btn btn-light"
+        backBtn.id = "room-1-back-btn"
         backBtn.innerText = "Back to 'Epic Journeys' Collection"
 
         let br = document.createElement('br')
@@ -136,7 +141,9 @@ function loadRoom(paintings){
             // Append visual tour button for first painting in series
             if (painting === paintings[0]){
                 let tourBtn = document.createElement('button')
-                tourBtn.className = "visual-tour-button"
+                tourBtn.className = "btn btn-light visual-tour-button"
+                tourBtn.id = "room-1-tour-btn"
+
                 tourBtn.innerText = "Visual Tour"
 
                 // Click on visual tour button to clear HTML and load visual tour
@@ -148,10 +155,10 @@ function loadRoom(paintings){
                     // Load visual tour feature
                     loadVisualScroll(paintings[0])
                 })
-                btnDiv.append(tourBtn)
+                btnDiv.append(tourBtn, br)
             }
 
-        btnDiv.append(saveBtn, br, br, backBtn)
+        btnDiv.append(saveBtn, br, backBtn)
         paintingMainDiv.append(paintingTextDiv, zoomBox, btnDiv)
 
         mainBody.append(paintingMainDiv)

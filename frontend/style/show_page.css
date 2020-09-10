@@ -30,4 +30,20 @@
 
 .painting-buttons-container{
     margin-left:100;
+    padding-top:10px;
 }
+
+#room-1-save-btn, #room-1-tour-btn, #room-1-back-btn{
+        color: #1C1717; 
+        background-color:#edd8d8; 
+        border-color: #130269; 
+        margin-top: 10px;
+
+}
+
+
+#room-1-back-btn{
+    position:relative;
+    margin-top: 15px;
+}
+

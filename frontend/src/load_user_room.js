@@ -82,16 +82,16 @@ function loadUserRoom(paintings){
                 $("img").jqZoom({
                     selectorWidth: 30,
                     selectorHeight: 30,
-                    viewerWidth: 400,
-                    viewerHeight: 300
+                    viewerWidth: 600,
+                    viewerHeight: 500
                 });
             })
 
             // Create image for zooming
             let zoomImg = document.createElement('img')
             zoomImg.src = painting.image_url 
-            zoomImg.width = "400"
-            zoomImg.height = "300"
+            zoomImg.width = "500"
+            zoomImg.height = "400"
             zoomBox.append(zoomImg)
 
             // Create remove button
@@ -143,7 +143,7 @@ function loadUserRoom(paintings){
 
         
 
-        paintingMainDiv.append(paintingTextDiv, zoomBox)
+        paintingMainDiv.append(paintingTextDiv, zoomBox, removeBtn, backBtn, notesForm, notesUl)
         mainBody.append(paintingMainDiv)
             
             backBtn.addEventListener("click", function(){

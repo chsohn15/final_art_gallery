@@ -100,8 +100,8 @@ function loadNavBar(){
       <div class="carousel-item">
         <img id="carousel-image-3" src="https://www.bertc.com/subfour/g126/images/goncharova.jpg" class="d-block w-100" alt="...">
         <div id="carousel-caption-3" class="carousel-caption d-none d-md-block">
-          <h5 class="carousel-caption-text-1">Mythical Beasts</h5>
-          <p class="carousel-caption-text-2">Explore the K & C Art Gallery's <i>Mythical Beasts</i> exhibit.</p>
+          <h5 class="carousel-caption-text-1">Where Entropy Reigns Supreme</h5>
+          <p class="carousel-caption-text-2">Explore the K & C Art Gallery's <i>Where Entropy Reigns Supreme</i> exhibit.</p>
         </div>
       </div>
     </div>
@@ -180,8 +180,8 @@ function loadHomePage (){
         <div class="card mb-3">
             <img class="card-img-top" style="max-height:500px;" src="https://uploads3.wikiart.org/images/pablo-picasso/still-life-with-cat-and-lobster-1962.jpg!Large.jpg" alt="Card image cap">
                 <div class="card-body" style="text-align:center;">
-                    <h5 class="card-title">Mythical Beasts</h5>
-                    <p class="card-text">Experience the fantastical imaginations of visionary painters as they blur the boundaries between human and beast.</p>
+                    <h5 class="card-title"> Where Entropy Reigns Supreme </h5>
+                    <p class="card-text">Experience the fantastical imaginations of visionary painters as they blur the boundaries between chaos and order.</p>
                     <button id="room2-button" type="button" class="btn btn-outline-secondary">Enter Exhibit</button>
                 </div>
         </div>`

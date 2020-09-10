@@ -1,5 +1,6 @@
 function loadAudioRoom(paintings){
-
+    let roomDiv = document.createElement("div")
+    roomDiv.className ="background"
     let roomTitle = document.createElement('h2')
 
     roomTitle.innerText = paintings[0].rooms[0].name
@@ -40,26 +41,30 @@ function loadAudioRoom(paintings){
 
         // Link to show page of one painting on click
         textDiv.addEventListener("click", function(){
-            
+            let paintingDiv = document.createElement("div")
+            paintingDiv.style.height = "89%"
+            paintingDiv.className="individual-painting"
             mainBody.innerHTML = ""
+            
             mainBody.setAttribute("style", "background-color:white;")
 
             // Painting title
             let imgHeader = document.createElement('h2')
             imgHeader.innerText = painting.title
+            imgHeader.className ="individual-text"
 
             // Painting artist
             let imgArtist = document.createElement('h3')
             imgArtist.innerText = `By ${painting.artist}`
-            
+            imgArtist.className ="individual-text"
             // Painting movement
             let imgMovement = document.createElement('h4')
             imgMovement.innerText = `Movement: ${painting.movement}`
-
+            imgMovement.className ="individual-text"
             // Painting date
             let imgDate = document.createElement('h4')
             imgDate.innerText = `Date: ${painting.date}`
-
+            imgDate.className ="individual-text"
             // Zoom box
             zoomBox = document.createElement('div')
             zoomBox.className = "zoom-box"
@@ -69,16 +74,16 @@ function loadAudioRoom(paintings){
                 $("img").jqZoom({
                     selectorWidth: 30,
                     selectorHeight: 30,
-                    viewerWidth: 400,
-                    viewerHeight: 300
+                    viewerWidth: 600,
+                    viewerHeight: 500
                 });
             })
 
             // Create image for zooming
             let zoomImg = document.createElement('img')
             zoomImg.src = painting.image_url 
-            zoomImg.width = "400"
-            zoomImg.height = "300"
+            zoomImg.width = "500"
+            zoomImg.height = "400"
             zoomBox.append(zoomImg)
 
             saveBtn = document.createElement('button')
@@ -98,7 +103,7 @@ function loadAudioRoom(paintings){
                 )
             }
             )
-            
+
             .then(res => res.json())
             .then(res => {console.log(res)})
 
@@ -115,7 +120,8 @@ function loadAudioRoom(paintings){
         backBtn.innerText = "Back to 'Mythical Creatures' Collection"
 
         let br = document.createElement('br')
-            mainBody.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)
+    paintingDiv.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)
+      mainBody.append(paintingDiv)  
             
             // Append visual tour button for first painting in series
             if (painting === paintings[0]){
@@ -131,9 +137,9 @@ function loadAudioRoom(paintings){
                     // Load visual tour feature
                     loadScroll()
                 })
-                mainBody.append(tourBtn)
+                paintingDiv.append(tourBtn)
             }
-            mainBody.append(br, backBtn)
+            paintingDiv.append(br, backBtn)
 
             backBtn.addEventListener("click", function(){
                 mainBody.innerHTML = ""
@@ -158,8 +164,8 @@ function loadAudioRoom(paintings){
     
     // Append table to body
     roomTable.append(roomTableRow, roomTableRow2)
-    mainBody.append(roomTitle, roomTable)
-
+    roomDiv.append(roomTitle, roomTable)
+    mainBody.append(roomDiv)
     // Create a frame
     let frame = document.createElement('img')
     frame.id = "frame"

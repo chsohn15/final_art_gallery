@@ -21,7 +21,7 @@ room1 = Room.create(
     name: "Epic Journeys"
 )
 room2 = Room.create(
-    name: "Mythical Beasts"
+    name: "Where Entropy Reigns Supreme"
 )
 
 room3 = Room.create(
@@ -103,13 +103,19 @@ waves = Painting.create(
     title: "Im Spiel der Wellen",
     image_url: "https://res.cloudinary.com/tne/image/authenticated/s--7v0Ti9hm--/q_80/artworks/ARNOLD-BOECKLIN_IM-SPIEL-DER-WELLEN_CC-BY-SA_BSTGS_7754.jpg")
 
-cat = Painting.create(
-    artist: "Pablo Picasso",
-    date: 1962,
-    movement: "Surrealism",
-    title: "Still life with cat and lobster",
-    image_url: "https://i0.wp.com/uploads2.wikiart.org/images/pablo-picasso/still-life-with-cat-and-lobster-1962.jpg?ssl=1")
-    
+kite = Painting.create(
+    artist: "Arturo Rodriguez",
+    date: "1998",
+    movement: "Abstract Postmodernism",
+    title: "Sin Titulo",
+    image_url: "https://ids.si.edu/ids/deliveryService?max_w=800&id=SAAM-2013.18_1")
+        
+funk = Painting.create(
+    artist: "Jim Nutt",
+    date: 1967,
+    movement: "Funk",
+    title: "Miss T. Garmint (she pants a lot)",
+    image_url: "https://static01.nyt.com/images/2011/03/13/arts/03132011_NUTTSlide-slide-T7O1/03132011_NUTTSlide-slide-T7O1-jumbo.jpg?quality=75&auto=webp&disable=upscale")
 
 rooster = Painting.create(
     artist: "Natalia Goncharova",
@@ -117,28 +123,23 @@ rooster = Painting.create(
     movement: "Cubism",
     title: "Boy with rooster",
     image_url: "https://www.bertc.com/subfour/g126/images/goncharova.jpg")
-funk = Painting.create(
-    artist: "Jim Nutt",
-    date: 1967,
-    movement: "Funk",
-    title: "Miss T. Garmint (she pants a lot)",
-    image_url: "https://static01.nyt.com/images/2011/03/13/arts/03132011_NUTTSlide-slide-T7O1/03132011_NUTTSlide-slide-T7O1-jumbo.jpg?quality=75&auto=webp&disable=upscale")
+        
 frida = Painting.create(
     artist: "Frida Kahlo",
     date: 1940,
     movement: "Symbolism",
     title: "Self-Portrait with Thorn Necklace and Hummingbird",
     image_url: "https://www.fridakahlo.org/images/paintings/self-portrait-with-necklace-of-thorns.jpg")
-kite = Painting.create(
-    artist: "Arturo Rodriguez",
-    date: "1998",
-    movement: "Abstract Postmodernism",
-    title: "Sin Titulo",
-    image_url: "https://ids.si.edu/ids/deliveryService?max_w=800&id=SAAM-2013.18_1")
-    
-    room1.paintings << [voyage, bridge, cannes, cassatt, cliff, age]
-    room2.paintings << [waves,cat,rooster,funk, frida, kite]
-    room3.paintings << [cliff, cat]
-
-
-
+cat = Painting.create(
+    artist: "Pablo Picasso",
+    date: 1962,
+    movement: "Surrealism",
+    title: "Still life with cat and lobster",
+    image_url: "https://i0.wp.com/uploads2.wikiart.org/images/pablo-picasso/still-life-with-cat-and-lobster-1962.jpg?ssl=1")
+                
+            room1.paintings << [voyage, bridge, cannes, cassatt, cliff, age]
+            room2.paintings << [waves,cat,rooster,funk, frida, kite]
+            room3.paintings << [cliff, cat]
+            
+            
+            

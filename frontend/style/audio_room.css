@@ -7,14 +7,25 @@
     /* font-family: 'Cinzel', serif; */
     font-family: 'Tangerine', cursive;
     font-size:50px;
-    color:#edd8d8;
+    color:#cccaca;
 }
-
+.background{
+    background-color: #2b4470;
+    background-image: url("https://www.transparenttextures.com/patterns/ice-age.png");
+}
 .canvas-room-2{
     position:relative;
     padding-left: 40px;
     padding-top: 10px;
     padding-bottom:10px;
+}
+.individual-painting{
+
+    background-color: #000000;
+background-image: url("https://www.transparenttextures.com/patterns/wall-4-light.png");
+}
+.individual-text{
+    color:#ffffff;
 }
 
 #room-2-text-div{
@@ -23,7 +34,7 @@
     text-align:center;
     font-family: 'Tangerine', cursive;
     cursor:hand;
-    color:#edd8d8;
+    color:#cccaca;
 }
 
     .room-2-image-p{

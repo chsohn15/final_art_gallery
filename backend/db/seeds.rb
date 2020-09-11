@@ -143,7 +143,7 @@ life = Painting.create(
 
             room1.paintings << [voyage, bridge, cannes, cassatt, cliff, age]
             room2.paintings << [waves,liberty,life,wrath, encounter, chaos]
-            room3.paintings << [cliff]
+            
             
             
             

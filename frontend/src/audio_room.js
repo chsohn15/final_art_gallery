@@ -119,7 +119,7 @@ function loadAudioRoom(paintings){
         
         let backBtn = document.createElement('button')
         backBtn.className= "individual-buttons"
-        backBtn.innerText = "Back to 'Mythical Creatures' Collection"
+        backBtn.innerText = "Back to 'Where Entropy Reigns Supreme' Collection"
 
         let br = document.createElement('br')
     paintingDiv.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)

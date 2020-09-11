@@ -44,7 +44,7 @@ note1 = Note.create(
 )
 
 note2 = Note.create(
-    content: "The painting depicts a heroic young adult who is looks forward with confidence and exuberance toward the future. The hero's physical separation from the angel shows his increasing independence as he ventures toward his aspirations.",
+    content: "The painting depicts a heroic young adult who looks forward with confidence and exuberance toward the future. The hero's physical separation from the angel shows his increasing independence as he ventures toward his aspirations.",
     original?: true
 )
 

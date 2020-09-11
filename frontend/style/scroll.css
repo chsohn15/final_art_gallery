@@ -15,6 +15,7 @@ svg {
     position: fixed;
     margin-left:10px;
     float:left;
+    padding-top:15px;
 
 }
 .title{
@@ -35,6 +36,15 @@ svg {
   .caption-container{
     height: 100%;
     width: 50%;
+  }
+
+  #visual-tour-div{
+    /* background-color:#618076; */
+    /* background-color: #718b94; */
+    /* background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png"); */
+
+    background-color: #556a70;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
   }
 
 

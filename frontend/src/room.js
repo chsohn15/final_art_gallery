@@ -1,3 +1,5 @@
+const visualTourDiv =  document.createElement('div')
+visualTourDiv.id = "visual-tour-div"
 function loadRoom(paintings){
     //mainBody.setAttribute("style", "background-color: #780507;")
     let mainDiv = document.createElement('div')
@@ -137,7 +139,8 @@ function loadRoom(paintings){
         let btnDiv = document.createElement('div')
         btnDiv.className = "painting-buttons-container"
 
-        
+        const visualTourDiv =  document.createElement('div')
+
             // Append visual tour button for first painting in series
             if (painting === paintings[0]){
                 let tourBtn = document.createElement('button')
@@ -150,8 +153,9 @@ function loadRoom(paintings){
                 tourBtn.addEventListener("click", function(){
                     console.log(painting.image_url)
                     mainBody.innerHTML = ""
-                    mainBody.innerHTML = `<svg  version="1.1"  viewport="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image id="voyage-youth" href="${painting.image_url}" x="0" y="0" height= "90%" width="100%" ></svg>`
                     
+                    visualTourDiv.innerHTML = `<svg  version="1.1"  viewport="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image id="voyage-youth" href="${painting.image_url}" x="0" y="0" height= "90%" width="100%" ></svg>`
+                    mainBody.append(visualTourDiv)
                     // Load visual tour feature
                     loadVisualScroll(paintings[0])
                 })
@@ -256,7 +260,8 @@ function loadVisualScroll(painting){
     
         let yOffset = window.pageYOffset 
 
-        if (yOffset > 50 && yOffset < 250){
+        if (yOffset > 1 && yOffset < 250){
+            
             svgTag.style.transform = "scale(1.0)"
             svgTag.style.transformOrigin = "50% 50%"
         }
@@ -332,7 +337,8 @@ function loadVisualScroll(painting){
     
         figCaption.append(p)
         capContainer.append(figCaption)
-        mainBody.append(capContainer)
+        visualTourDiv.append(capContainer)
+        mainBody.append(visualTourDiv)
         counter += 1
     }
     }

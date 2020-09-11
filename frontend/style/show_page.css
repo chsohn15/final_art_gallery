@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+
 /* Room 1 Show Page */
 .painting-text-div{
     margin-left:100;
     display: inline-block;
     margin-top: 20;
     color:#edd8d8;
+    font-family: 'Lora', serif;
 }
 
 .painting-main-div{
@@ -14,6 +17,7 @@
 
 .zoom-box{
     margin-left:100;
+    padding-top:10px;
 }
 
 /* My Collection Show Page */
@@ -46,4 +50,26 @@
     position:relative;
     margin-top: 15px;
 }
+
+#my-collections-btn-div{
+    padding-top: 10px;
+    margin-left:100;
+}
+
+#my-collection-remove-btn, #my-collection-notes-btn, #my-collection-back-btn{
+    background-color:#edd8d8; 
+}
+
+#my-collection-remove-btn{
+    margin-top: 10px;
+}
+
+#my-collection-notes-btn{
+    margin-top: 10px;
+}
+
+#my-collection-notes-form{
+    margin-top: 10px;
+}
+
 

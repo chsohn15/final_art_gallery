@@ -58,6 +58,7 @@ function loadUserRoom(paintings){
             let imgHeader = document.createElement('h2')
             imgHeader.innerText = painting.title
 
+
             // Painting artist
             let imgArtist = document.createElement('h3')
             imgArtist.innerText = `By ${painting.artist}`
@@ -96,16 +97,27 @@ function loadUserRoom(paintings){
 
             // Create remove button
             let removeBtn = document.createElement('button')
+            removeBtn.className = "btn btn-light"
+            removeBtn.id = "my-collection-remove-btn"
             removeBtn.innerText = "Remove from My Collection"
 
             //Create a notes form 
             let notesForm = document.createElement("form")
+            notesForm.className = "form-group col-md-3"
+            notesForm.id = "my-collection-notes-form"
+            let notesLabel = document.createElement("label")
+            notesLabel.setAttribute = ("for", "formGroupExampleInput")
+            notesLabel.innerText = "Add a note to this painting"
             let notesInput = document.createElement("input")
-            let notesBtn = document.createElement("button")
-            notesBtn.innerText = "Submit Note"
             notesInput.setAttribute("type", "text")
+            notesInput.className = "form-control"
+            notesInput.id = "formGroupExampleInput"
             notesInput.setAttribute("placeholder","Add A Note Here")
-            notesForm.append(notesInput,notesBtn)
+            let notesBtn = document.createElement("button")
+            notesBtn.className = "btn btn-light"
+            notesBtn.id = "my-collection-notes-btn"
+            notesBtn.innerText = "Submit Note"
+            notesForm.append(notesLabel, notesInput,notesBtn)
             
 
             // creates notes ul and adds existing notes
@@ -139,11 +151,19 @@ function loadUserRoom(paintings){
         })
            
         let backBtn = document.createElement('button')
+        backBtn.className = "btn btn-light"
+        backBtn.id = "my-collection-back-btn"
         backBtn.innerText = "Back to My Collection"
 
-        
+        let br = document.createElement('br')
+        // Create container for buttons
 
-        paintingMainDiv.append(paintingTextDiv, zoomBox, removeBtn, backBtn, notesForm, notesUl)
+        let myCollectionsBtnDiv = document.createElement('div')
+        myCollectionsBtnDiv.id = "my-collections-btn-div"
+        myCollectionsBtnDiv.append(backBtn, br, removeBtn, notesForm, notesUl)
+
+
+        paintingMainDiv.append(paintingTextDiv, zoomBox, myCollectionsBtnDiv)
         mainBody.append(paintingMainDiv)
             
             backBtn.addEventListener("click", function(){
@@ -220,9 +240,6 @@ function loadUserRoom(paintings){
                   })
                   mainBody.innerHTML = ""
 
-                  let userRoomTitle = document.createElement('h2')
-                  userRoomTitle.innerText = "My Art Collection"
-                  mainBody.append(userRoomTitle)
                   // var user =
                   fetch(`http://localhost:3000/users/${user.id}`)
                   .then(res => res.json())

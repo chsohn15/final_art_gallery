@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=EB+Garamond:wght@500&display=swap');
+
 html{
     width: 100%; 
     height: 100%;
@@ -15,6 +18,7 @@ svg {
     position: fixed;
     margin-left:10px;
     float:left;
+    padding-top:15px;
 
 }
 .title{
@@ -27,14 +31,36 @@ svg {
     background: rgba(0, 0, 0, 0.5);
     color:white;
     text-align: center; 
-    left:600;
+    font-family: 'EB Garamond', serif;
     position: absolute;
     bottom: 500;
+    font-size: 20px;
+  }
+  
+  #fig-caption-1{
+    font-family: 'EB Garamond', serif;
+    font-weight:bold;
+    font-size: 30px;
+    width: 375px;
+    margin-left: 520px;
+  }
+  #fig-caption-2, #fig-caption-3, #fig-caption-4{
+    width: 500px;
+    margin-left: 500px;
   }
 
   .caption-container{
     height: 100%;
     width: 50%;
+  }
+
+  #visual-tour-div{
+    /* background-color:#618076; */
+    /* background-color: #718b94; */
+    /* background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png"); */
+
+    background-color: #556a70;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
   }
 
 

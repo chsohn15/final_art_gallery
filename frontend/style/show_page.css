@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+
 /* Room 1 Show Page */
 .painting-text-div{
     margin-left:100;
     display: inline-block;
     margin-top: 20;
     color:#edd8d8;
+    font-family: 'Lora', serif;
 }
 
 .painting-main-div{
@@ -14,6 +17,7 @@
 
 .zoom-box{
     margin-left:100;
+    padding-top:10px;
 }
 
 /* My Collection Show Page */
@@ -26,4 +30,73 @@
     background-color: #de9292;
     background-image: url("https://www.transparenttextures.com/patterns/cross-scratches.png");
 }
+
+
+.painting-buttons-container{
+    margin-left:100;
+    padding-top:10px;
+}
+
+#room-1-save-btn, #room-1-tour-btn, #room-1-back-btn{
+        color: #1C1717; 
+        background-color:#edd8d8; 
+        border-color: #130269; 
+        margin-top: 10px;
+
+}
+
+
+#room-1-back-btn{ 
+
+    margin-top: 15px;
+    margin-left: 0px;
+}
+
+#my-collections-btn-div{
+    padding-top: 10px;
+    margin-left:100;
+}
+
+#my-collection-remove-btn, #my-collection-notes-btn, #my-collection-back-btn{
+    background-color:#edd8d8; 
+}
+
+#my-collection-remove-btn, #my-collection-back-btn{
+    margin-top: 10px;
+    margin-left: 13px;
+}
+
+#my-collection-notes-btn{
+    margin-top: 10px;
+}
+
+#my-collection-notes-form{
+    margin-top: 10px;
+    margin-left:0px;
+}
+
+.delete-note-btn{
+    background: transparent;
+border: 1px solid black;
+border-radius: 2em;
+color: black;
+display: inline-block;
+font-size: 12px;
+height: 20px;
+line-height: 2px;
+margin: 0 0 8px;
+padding: 0;
+text-align: center;
+width: 20px;
+margin-left: 5px;
+}
+
+#notes-ul{
+    font-size: 18px;
+}
+#notes-ul > li{
+    margin-left:15px;
+
+}
+
 

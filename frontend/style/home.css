@@ -13,7 +13,8 @@
 
 
 .carousel-item{
-    height:550px;
+    /* height:550px; */
+    height:700px;
 
 }
 #carousel-image-1{
@@ -35,7 +36,7 @@
     object-fit: contain;
 
     transform: translateY(-50%);
-    -webkit-transform: translateY(-40%);
+    -webkit-transform: translateY(-27%);
 
     position: relative;
 
@@ -47,7 +48,7 @@
     object-fit: contain;
 
     transform: translateY(-50%);
-    -webkit-transform: translateY(-45%);
+    -webkit-transform: translateY(-35%);
 
     position: relative;
 
@@ -63,6 +64,13 @@
     position:absolute;
     padding-top: 35px;
     left:20px;
+}
+
+.carousel-caption-text-3{
+    position:absolute;
+    padding-top: 35px;
+    left:20px;
+    padding-bottom:20px;
 }
 
 
@@ -86,11 +94,19 @@
 }
 
 #carousel-caption-1, #carousel-caption-2, #carousel-caption-3{
-    position:absolute;
-    top:450px;
+    /* position:absolute;
+    top:590px;
     left:0px;
     height: 100px;
-    width: 100%;
+    width: 100%; */
+
+    position:absolute;
+    top:300px;
+    left:50px;
+    height: 100px;
+    width: 35%;
+   
+
 }
 
 /* Exhibits page */

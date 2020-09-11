@@ -49,10 +49,6 @@ function linkMyCollection(){
     userCollectionLink.addEventListener("click",function(){
         mainBody.innerHTML = ""
 
-        let userRoomTitle = document.createElement('h2')
-        userRoomTitle.innerText = "My Art Collection"
-        mainBody.append(userRoomTitle)
-        // var user =
         fetch(`http://localhost:3000/users/${user.id}`)
         .then(res => res.json())
         .then (user => {
@@ -66,7 +62,7 @@ function linkMyCollection(){
                 mainBody.innerHTML = ""
                 loadUserRoom(user.room.paintings)
             }
-            , 1000);
+            , 750);
             }
         })
     

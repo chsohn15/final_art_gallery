@@ -133,8 +133,8 @@ function loadRoom(paintings){
         let backBtn = document.createElement('button')
         backBtn.className = "btn btn-light"
         backBtn.id = "room-1-back-btn"
-        backBtn.innerText = "Back to 'Epic Journeys' Collection"
-
+        // backBtn.innerText = "Back to 'Epic Journeys' Collection"
+        backBtn.innerHTML = `<span>&#8678; Back to 'Epic Journeys' Collection</span>`
         let br = document.createElement('br')
         let btnDiv = document.createElement('div')
         btnDiv.className = "painting-buttons-container"

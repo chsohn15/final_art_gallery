@@ -328,6 +328,7 @@ function loadVisualScroll(painting){
     
         let figCaption = document.createElement('figcaption')
         figCaption.className = "caption"
+        figCaption.id = `fig-caption-${counter + 1}`
         figCaption.style.bottom = bottom1 
     
         bottom1 -= 800

@@ -48,7 +48,7 @@
     object-fit: contain;
 
     transform: translateY(-50%);
-    -webkit-transform: translateY(-35%);
+    -webkit-transform: translateY(-25%);
 
     position: relative;
 

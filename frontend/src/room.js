@@ -80,8 +80,8 @@ function loadRoom(paintings){
                 $("img").jqZoom({
                     selectorWidth: 30,
                     selectorHeight: 30,
-                    viewerWidth: 650,
-                    viewerHeight: 500
+                    viewerWidth: 625,
+                    viewerHeight: 475
                 });
             })
 
@@ -231,7 +231,11 @@ function loadVisualScroll(painting){
     let bottom1 = 500
     // const notes = [
     //     "The Voyage of Life: Youth by Thomas Cole","Look at this marvelous painting", "Note 1", "Note 2"]
-    const notes = painting.notes.map(note => {
+    const originalNotes = painting.notes.filter(note =>{
+        return note["original?"] === true
+    })
+    
+    const notes = originalNotes.map(note => {
         return note.content
     })
     let counter = 0;
@@ -251,7 +255,12 @@ function loadVisualScroll(painting){
     window.onscroll = () => {
     
         let yOffset = window.pageYOffset 
-    
+
+        if (yOffset > 50 && yOffset < 250){
+            svgTag.style.transform = "scale(1.0)"
+            svgTag.style.transformOrigin = "50% 50%"
+        }
+
         if (yOffset > 250 && yOffset < 766){
             // Calculate current scale value
            //svgTag.style.transform = "scale(2.0)"

@@ -229,6 +229,11 @@ function loadScroll(){
         
         let yOffset = window.pageYOffset 
     
+        if (yOffset > 50 && yOffset < 250){
+            svgTag.style.transform = "scale(1.0)"
+            svgTag.style.transformOrigin = "50% 50%"
+        }
+        
         if (yOffset > 250 && yOffset < 766){
             // Calculate current scale value
            //svgTag.style.transform = "scale(2.0)"

@@ -87,7 +87,7 @@ function loadAudioRoom(paintings){
             zoomBox.append(zoomImg)
 
             saveBtn = document.createElement('button')
-            saveBtn.className= "individual-buttons"
+            saveBtn.className= "individual-buttons btn btn-light"
           saveBtn.innerHTML = `Save to My Collection <i class="fa fa-heart" style="font-size:20px;color:black"></i>`
             saveBtn.addEventListener("click", ()=> { 
                 
@@ -118,9 +118,9 @@ function loadAudioRoom(paintings){
         })
         
         let backBtn = document.createElement('button')
-        backBtn.className= "individual-buttons"
-        backBtn.innerText = "Back to 'Mythical Creatures' Collection"
-
+        backBtn.className= "individual-buttons btn btn-light"
+        // backBtn.innerText = "Back to 'Mythical Creatures' Collection"
+        backBtn.innerHTML = `<span>&#8678; Back to 'Mythical Creatures' Collection</span>`
         let br = document.createElement('br')
     paintingDiv.append(imgHeader, imgArtist, imgMovement, imgDate, zoomBox, saveBtn)
       mainBody.append(paintingDiv)  

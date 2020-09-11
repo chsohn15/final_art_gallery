@@ -148,6 +148,7 @@ function loadRoom(paintings){
                 tourBtn.id = "room-1-tour-btn"
 
                 tourBtn.innerText = "Visual Tour"
+                tourBtn.innerHTML = "<span>Visual Tour &#9733;</span>"
 
                 // Click on visual tour button to clear HTML and load visual tour
                 tourBtn.addEventListener("click", function(){

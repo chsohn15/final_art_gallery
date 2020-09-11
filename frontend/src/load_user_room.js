@@ -99,7 +99,7 @@ function loadUserRoom(paintings){
             let removeBtn = document.createElement('button')
             removeBtn.className = "btn btn-light"
             removeBtn.id = "my-collection-remove-btn"
-            removeBtn.innerText = "Remove from My Collection"
+            removeBtn.innerText = "Remove Painting from My Collection"
 
             //Create a notes form 
             let notesForm = document.createElement("form")
@@ -160,7 +160,7 @@ function loadUserRoom(paintings){
 
         let myCollectionsBtnDiv = document.createElement('div')
         myCollectionsBtnDiv.id = "my-collections-btn-div"
-        myCollectionsBtnDiv.append(backBtn, br, removeBtn, notesForm, notesUl)
+        myCollectionsBtnDiv.append(notesForm, notesUl, backBtn, br, removeBtn)
 
 
         paintingMainDiv.append(paintingTextDiv, zoomBox, myCollectionsBtnDiv)

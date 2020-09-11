@@ -80,7 +80,7 @@ function loadRoom(paintings){
                 $("img").jqZoom({
                     selectorWidth: 30,
                     selectorHeight: 30,
-                    viewerWidth: 600,
+                    viewerWidth: 650,
                     viewerHeight: 500
                 });
             })
@@ -88,7 +88,7 @@ function loadRoom(paintings){
             // Create image for zooming
             let zoomImg = document.createElement('img')
             zoomImg.src = painting.image_url 
-            zoomImg.width = "500"
+            zoomImg.width = "550"
             zoomImg.height = "400"
 
             zoomBox.append(zoomImg)

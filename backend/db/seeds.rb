@@ -44,12 +44,12 @@ note1 = Note.create(
 )
 
 note2 = Note.create(
-    content: "The painting depicts a heroic young adult who is looks forward with confidence and exuberance toward the future. The hero's physical separation from the angel shows increasing his increasing independence as he ventures toward his aspirations.",
+    content: "The painting depicts a heroic young adult who looks forward with confidence and exuberance toward the future. The hero's physical separation from the angel shows his increasing independence as he ventures toward his aspirations.",
     original?: true
 )
 
 note3 = Note.create(
-    content: "The castle in the distance represents the youth's hopes and dreams for the future. The airy quality of the visage reflects the elusive and lofty nature of youthtful dreams.",
+    content: "The castle in the distance represents the youth's hopes and dreams for the future. The airy quality of the visage reflects the elusive and lofty nature of dreams.",
     original?: true
 )
 

@@ -1,3 +1,5 @@
+const visualTourDiv =  document.createElement('div')
+visualTourDiv.id = "visual-tour-div"
 function loadRoom(paintings){
     //mainBody.setAttribute("style", "background-color: #780507;")
     let mainDiv = document.createElement('div')
@@ -5,8 +7,7 @@ function loadRoom(paintings){
     //mainDiv.setAttribute("style", "background-color: #780507;")
 
     let roomTitle = document.createElement('h2')
-    
-    roomTitle.innerText = paintings[0].rooms[0].name
+    roomTitle.innerText = "Epic Journeys"
     roomTitle.id = "room-1-title"
     let roomTable = document.createElement('table')
     let roomTableRow = document.createElement('tr')
@@ -81,15 +82,15 @@ function loadRoom(paintings){
                 $("img").jqZoom({
                     selectorWidth: 30,
                     selectorHeight: 30,
-                    viewerWidth: 600,
-                    viewerHeight: 500
+                    viewerWidth: 625,
+                    viewerHeight: 475
                 });
             })
 
             // Create image for zooming
             let zoomImg = document.createElement('img')
             zoomImg.src = painting.image_url 
-            zoomImg.width = "500"
+            zoomImg.width = "550"
             zoomImg.height = "400"
 
             zoomBox.append(zoomImg)
@@ -97,6 +98,9 @@ function loadRoom(paintings){
 
             saveBtn = document.createElement('button')
             saveBtn.innerHTML = `Save to My Collection <i class="fa fa-heart" style="font-size:20px;color:black"></i>`
+            saveBtn.className = "btn btn-light"
+            saveBtn.id = "room-1-save-btn"
+            saveBtn.setAttribute = ("style", "background-color: #F099D2 !important;")
             saveBtn.addEventListener("click", ()=> { 
                 
                 fetch("http://localhost:3000/painting_rooms"
@@ -127,30 +131,41 @@ function loadRoom(paintings){
         })
 
         let backBtn = document.createElement('button')
+        backBtn.className = "btn btn-light"
+        backBtn.id = "room-1-back-btn"
         backBtn.innerText = "Back to 'Epic Journeys' Collection"
 
         let br = document.createElement('br')
-        paintingMainDiv.append(paintingTextDiv, zoomBox, saveBtn)
-        
+        let btnDiv = document.createElement('div')
+        btnDiv.className = "painting-buttons-container"
+
+        const visualTourDiv =  document.createElement('div')
+
             // Append visual tour button for first painting in series
             if (painting === paintings[0]){
                 let tourBtn = document.createElement('button')
+                tourBtn.className = "btn btn-light visual-tour-button"
+                tourBtn.id = "room-1-tour-btn"
+
                 tourBtn.innerText = "Visual Tour"
 
                 // Click on visual tour button to clear HTML and load visual tour
                 tourBtn.addEventListener("click", function(){
                     console.log(painting.image_url)
                     mainBody.innerHTML = ""
-                    mainBody.innerHTML = `<svg  version="1.1"  viewport="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image id="voyage-youth" href="${painting.image_url}" x="0" y="0" height= "90%" width="100%" ></svg>`
                     
+                    visualTourDiv.innerHTML = `<svg  version="1.1"  viewport="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image id="voyage-youth" href="${painting.image_url}" x="0" y="0" height= "90%" width="100%" ></svg>`
+                    mainBody.append(visualTourDiv)
                     // Load visual tour feature
                     loadVisualScroll(paintings[0])
                 })
-                paintingMainDiv.append(tourBtn)
+                btnDiv.append(tourBtn, br)
             }
 
-            paintingMainDiv.append(br, backBtn)
-            mainBody.append(paintingMainDiv)
+        btnDiv.append(saveBtn, br, backBtn)
+        paintingMainDiv.append(paintingTextDiv, zoomBox, btnDiv)
+
+        mainBody.append(paintingMainDiv)
 
             backBtn.addEventListener("click", function(){
                 mainBody.innerHTML = ""
@@ -187,7 +202,7 @@ function loadRoom(paintings){
     mainBody.append(frame)
     
     //Wait one second and load images
-    setTimeout(function(){draw()}, 1000);
+    setTimeout(function(){draw()}, 750);
 
     
     // Function to draw images and frames on canvas
@@ -220,7 +235,11 @@ function loadVisualScroll(painting){
     let bottom1 = 500
     // const notes = [
     //     "The Voyage of Life: Youth by Thomas Cole","Look at this marvelous painting", "Note 1", "Note 2"]
-    const notes = painting.notes.map(note => {
+    const originalNotes = painting.notes.filter(note =>{
+        return note["original?"] === true
+    })
+    
+    const notes = originalNotes.map(note => {
         return note.content
     })
     let counter = 0;
@@ -240,7 +259,13 @@ function loadVisualScroll(painting){
     window.onscroll = () => {
     
         let yOffset = window.pageYOffset 
-    
+
+        if (yOffset > 1 && yOffset < 250){
+            
+            svgTag.style.transform = "scale(1.0)"
+            svgTag.style.transformOrigin = "50% 50%"
+        }
+
         if (yOffset > 250 && yOffset < 766){
             // Calculate current scale value
            //svgTag.style.transform = "scale(2.0)"
@@ -303,6 +328,7 @@ function loadVisualScroll(painting){
     
         let figCaption = document.createElement('figcaption')
         figCaption.className = "caption"
+        figCaption.id = `fig-caption-${counter + 1}`
         figCaption.style.bottom = bottom1 
     
         bottom1 -= 800
@@ -312,7 +338,8 @@ function loadVisualScroll(painting){
     
         figCaption.append(p)
         capContainer.append(figCaption)
-        mainBody.append(capContainer)
+        visualTourDiv.append(capContainer)
+        mainBody.append(visualTourDiv)
         counter += 1
     }
     }

@@ -49,10 +49,6 @@ function linkMyCollection(){
     userCollectionLink.addEventListener("click",function(){
         mainBody.innerHTML = ""
 
-        let userRoomTitle = document.createElement('h2')
-        userRoomTitle.innerText = "My Art Collection"
-        mainBody.append(userRoomTitle)
-        // var user =
         fetch(`http://localhost:3000/users/${user.id}`)
         .then(res => res.json())
         .then (user => {
@@ -66,7 +62,7 @@ function linkMyCollection(){
                 mainBody.innerHTML = ""
                 loadUserRoom(user.room.paintings)
             }
-            , 1000);
+            , 750);
             }
         })
     
@@ -94,7 +90,7 @@ function loadCarousel(){
         <img id="carousel-image-1" src="https://www.claude-monet.com/images/paintings/cliff-walk-at-pourville.jpg" class="d-block w-100" alt="...">
         <div id="carousel-caption-1" class="carousel-caption d-none d-md-block">
           <h5 class="carousel-caption-text-1">Epic Journeys</h5>
-          <p class="carousel-caption-text-2">Explore the K & C Art Gallery's newest exhibit.</p>
+          <p class="carousel-caption-text-2">Explore the K&C Art Gallery's newest exhibit.</p>
         </div>
       </div>
       <div class="carousel-item">
@@ -108,7 +104,7 @@ function loadCarousel(){
         <img id="carousel-image-3" src="https://www.bertc.com/subfour/g126/images/goncharova.jpg" class="d-block w-100" alt="...">
         <div id="carousel-caption-3" class="carousel-caption d-none d-md-block">
           <h5 class="carousel-caption-text-1">Where Entropy Reigns Supreme</h5>
-          <p class="carousel-caption-text-2">Explore the K & C Art Gallery's <i>Where Entropy Reigns Supreme</i> exhibit.</p>
+          <p class="carousel-caption-text-2">Explore the K&C Art Gallery's <i>Where Entropy Reigns Supreme</i> exhibit.</p>
         </div>
       </div>
     </div>

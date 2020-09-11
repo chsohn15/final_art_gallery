@@ -130,7 +130,9 @@ function loadAudioRoom(paintings){
       // Append visual tour button for first painting in series
       if (painting === paintings[0]){
           let tourBtn = document.createElement('button')
-          tourBtn.innerText = "Audio Tour"
+          tourBtn.className ="btn btn-light"
+          
+          tourBtn.innerHTML = `<span> Audio Tour &#128264; </span>`
           
           // Click on visual tour button to clear HTML and load visual tour
           tourBtn.addEventListener("click", function(){
@@ -201,7 +203,7 @@ function draw() {
 }
 }
 // Set distance of note from bottom of screen
-let bottom1 = 500
+let bottom1 = 492
 
 let tourDiv = document.createElement("div")
 tourDiv.id = "tour-background"
@@ -293,9 +295,12 @@ function loadScroll(){
         let capContainer = document.createElement('div')
         capContainer.className = "caption-container"
         capContainer.style.height = "90%;"
+
     
         let figCaption = document.createElement('figcaption')
         figCaption.className = "caption"
+        figCaption.id = `fig-${counter + 1}`
+        
         figCaption.style.bottom = bottom1 
     
         bottom1 -= 800

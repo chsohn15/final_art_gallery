@@ -14,6 +14,23 @@
     background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
 
 }
+#fig-1{
+    margin-left: 941px;
+    margin-top: 10px;
+    height:190px;
+    width: 250px;
+   
+}
+#fig-2{
+height: 100px;
+margin-left: 910px;
+
+}
+#fig-3{
+height: 100px;
+margin-left: 450px;
+
+}
 .canvas-room-2{
     position:relative;
     padding-left: 57px;
@@ -64,7 +81,7 @@ background-image: url("https://www.transparenttextures.com/patterns/gray-floral.
         border: none;
         border-radius: 10px;
         color: #eee;
-        font-size: 30px;
+        font-size: 20px;
         font-family: 'Cookie', cursive;
         position: relative;
         transition: 1s;

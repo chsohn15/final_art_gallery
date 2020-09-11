@@ -122,6 +122,8 @@ function loadUserRoom(paintings){
 
             // creates notes ul and adds existing notes
             let notesUl = document.createElement("ul")
+            notesUl.id = "notes-ul"
+            notesUl.innerText = "My Notes:"
     
             fetch(`http://localhost:3000/paintings/${painting.id}`)
             .then(res => res.json())
@@ -134,7 +136,8 @@ function loadUserRoom(paintings){
                     notesLi.innerText = note.content
                     notesUl.append(notesLi)
                     let deleteNoteBtn = document.createElement("button")
-                    deleteNoteBtn.innerText = "Delete This Note"
+                    deleteNoteBtn.className = "delete-note-btn"
+                    deleteNoteBtn.innerText = "-"
                     deleteNoteBtn.dataset.id = note.id
                     // deleteNoteBtn.value = note
                     notesLi.append(deleteNoteBtn)
@@ -160,7 +163,7 @@ function loadUserRoom(paintings){
 
         let myCollectionsBtnDiv = document.createElement('div')
         myCollectionsBtnDiv.id = "my-collections-btn-div"
-        myCollectionsBtnDiv.append(notesForm, notesUl, backBtn, br, removeBtn)
+        myCollectionsBtnDiv.append(notesUl,notesForm, backBtn, br, removeBtn)
 
 
         paintingMainDiv.append(paintingTextDiv, zoomBox, myCollectionsBtnDiv)
@@ -196,7 +199,8 @@ function loadUserRoom(paintings){
                     notesForm.reset()
 
                     let deleteNoteBtn = document.createElement("button")
-                    deleteNoteBtn.innerText = "Delete This Note"
+                    deleteNoteBtn.className = "delete-note-btn"
+                    deleteNoteBtn.innerText = "-"
                     deleteNoteBtn.dataset.id = note.id
                     // deleteNoteBtn.value = note
                     notesLi.append(deleteNoteBtn)
@@ -244,7 +248,9 @@ function loadUserRoom(paintings){
                   fetch(`http://localhost:3000/users/${user.id}`)
                   .then(res => res.json())
                   .then (user => {
-                      setTimeout(function(){loadUserRoom(user.room.paintings)}, 1000);
+                      setTimeout(function(){
+                          loadUserRoom(user.room.paintings)
+                        }, 750);
                       }
                   )
                 

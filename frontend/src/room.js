@@ -198,7 +198,7 @@ function loadRoom(paintings){
     mainBody.append(frame)
     
     //Wait one second and load images
-    setTimeout(function(){draw()}, 1000);
+    setTimeout(function(){draw()}, 750);
 
     
     // Function to draw images and frames on canvas

@@ -63,7 +63,7 @@
 
 #my-collection-remove-btn, #my-collection-back-btn{
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 13px;
 }
 
 #my-collection-notes-btn{
@@ -73,6 +73,30 @@
 #my-collection-notes-form{
     margin-top: 10px;
     margin-left:0px;
+}
+
+.delete-note-btn{
+    background: transparent;
+border: 1px solid black;
+border-radius: 2em;
+color: black;
+display: inline-block;
+font-size: 12px;
+height: 20px;
+line-height: 2px;
+margin: 0 0 8px;
+padding: 0;
+text-align: center;
+width: 20px;
+margin-left: 5px;
+}
+
+#notes-ul{
+    font-size: 18px;
+}
+#notes-ul > li{
+    margin-left:15px;
+
 }
 
 
